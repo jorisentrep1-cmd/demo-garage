@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Garage Meunier — Garage automobile à Lille</title>
+<meta name="description" content="Garage Meunier, mécanique et entretien automobile à Lille. Révision, pneumatiques, diagnostic. Devis gratuit."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --charcoal:#1a1a1a;--charcoal2:#262626;
+  --gold:#e8a51a;--gold2:#f2ba3f;
+  --blush:#efeeec;--cream:#f9f8f7;
+  --text:#1a1a1a;--text2:#5c5c5c;--text3:#8f8f8f;
+  --border:#e0dfdd;--white:#fff;--green:#22c55e;
+  --t:.3s cubic-bezier(.4,0,.2,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.serif{font-family:'Playfair Display',serif}
+
+/* DEMO RIBBON */
+.demo-ribbon{position:fixed;top:0;left:0;right:0;z-index:200;background:#0f2044;color:#fff;padding:.55rem 1rem;text-align:center;font-size:.72rem;font-weight:600;display:flex;align-items:center;justify-content:center;gap:.6rem;flex-wrap:wrap}
+.demo-ribbon a{color:#f08020;text-decoration:none;font-weight:700}
+.demo-ribbon a:hover{text-decoration:underline}
+.demo-badge{background:#f08020;color:#fff;font-size:.6rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:.15rem .55rem;border-radius:100px}
+
+/* NAV */
+nav{position:fixed;top:34px;left:0;right:0;z-index:100;height:74px;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;background:rgba(250,246,242,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);transition:top var(--t)}
+.n-logo{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+.n-mark{width:38px;height:38px;flex-shrink:0}
+.n-name{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--charcoal);letter-spacing:.3px}
+.n-links{display:flex;list-style:none;align-items:center;gap:.3rem}
+.n-links a{padding:.5rem 1rem;font-size:.8rem;font-weight:600;color:var(--text2);text-decoration:none;transition:color var(--t)}
+.n-links a:hover{color:var(--charcoal)}
+.n-cta{background:var(--charcoal)!important;color:#fff!important;padding:.6rem 1.4rem!important;border-radius:100px;transition:background var(--t)!important}
+.n-cta:hover{background:var(--gold)!important;color:#fff!important}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--text2)}
+
+/* HERO */
+#hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:108px}
+.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1723099971299-3789db53604c?auto=format&fit=crop&w=1800&q=80') center/cover}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(43,36,32,.55) 0%,rgba(43,36,32,.72) 100%)}
+.hero-inner{max-width:800px;margin:0 auto;padding:4rem 2rem;text-align:center;position:relative;z-index:1;color:#fff}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.68rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold2);margin-bottom:1.75rem}
+.hero-eyebrow::before,.hero-eyebrow::after{content:'';width:24px;height:1px;background:var(--gold2)}
+h1.hero-title{font-size:clamp(2.6rem,6vw,4.4rem);font-weight:700;line-height:1.1;margin-bottom:1.5rem;letter-spacing:-.5px}
+.hero-sub{font-size:1.05rem;color:rgba(255,255,255,.8);max-width:480px;margin:0 auto 2.75rem;line-height:1.8;font-weight:400}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-p{background:var(--gold);color:var(--charcoal);border:none;padding:1rem 2.2rem;font-family:'Inter',sans-serif;font-size:.85rem;font-weight:700;cursor:pointer;transition:all var(--t);text-decoration:none;display:inline-flex;align-items:center;gap:.6rem;border-radius:100px}
+.btn-p:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 14px 30px rgba(176,141,87,.35)}
+.btn-s{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4);padding:1rem 2.2rem;font-family:'Inter',sans-serif;font-size:.85rem;font-weight:600;cursor:pointer;transition:all var(--t);text-decoration:none;display:inline-block;border-radius:100px}
+.btn-s:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+
+/* SECTIONS */
+.section{padding:7rem 2rem}
+.si{max-width:1120px;margin:0 auto}
+.s-tag{display:inline-flex;align-items:center;gap:.6rem;font-size:.66rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.s-tag::before{content:'';width:24px;height:1px;background:var(--gold)}
+.s-title{font-size:clamp(2rem,3.8vw,3rem);font-weight:700;color:var(--charcoal);letter-spacing:-.5px;line-height:1.15;margin-bottom:1.25rem}
+.s-sub{font-size:.95rem;color:var(--text2);line-height:1.85;max-width:560px}
+.center{text-align:center;margin-left:auto;margin-right:auto}
+
+/* PRESTATIONS */
+#prestations{background:var(--white)}
+.presta-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:4rem}
+.presta-row{display:flex;justify-content:space-between;align-items:center;padding:1.4rem 1.75rem;background:var(--cream);border:1px solid var(--border);border-radius:12px;transition:all var(--t)}
+.presta-row:hover{border-color:var(--gold);box-shadow:0 10px 30px rgba(176,141,87,.1)}
+.presta-name{font-size:.95rem;font-weight:600;color:var(--charcoal)}
+.presta-desc{font-size:.76rem;color:var(--text3);margin-top:.3rem}
+.presta-price{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--gold);white-space:nowrap;margin-left:1.5rem}
+
+/* GALERIE */
+#galerie{background:var(--blush)}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:4rem}
+.gal-item{aspect-ratio:3/4;border-radius:14px;overflow:hidden;position:relative}
+.gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;display:block}
+.gal-item:hover img{transform:scale(1.08)}
+.gal-item:first-child{grid-row:span 2;aspect-ratio:auto}
+
+/* AVIS DEMO */
+#avis{background:var(--charcoal);color:#fff;position:relative;overflow:hidden}
+.avis-glow{position:absolute;top:-20%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(176,141,87,.18) 0%,transparent 65%)}
+#avis .s-tag{color:var(--gold2)}
+#avis .s-title{color:#fff}
+#avis .s-sub{color:rgba(255,255,255,.6)}
+.avis-demo{max-width:520px;margin:3.5rem auto 0;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:2.5rem;text-align:center;position:relative;z-index:1}
+.avis-q{font-size:1rem;font-weight:600;margin-bottom:1.5rem}
+.avis-stars{display:flex;justify-content:center;gap:.5rem;margin-bottom:1.75rem}
+.avis-star{font-size:2rem;cursor:pointer;color:rgba(255,255,255,.25);transition:all .15s ease;line-height:1}
+.avis-star:hover,.avis-star.hovered{color:var(--gold2);transform:scale(1.15)}
+.avis-result{display:none;font-size:.82rem;line-height:1.7;padding:1.25rem;border-radius:10px;text-align:left}
+.avis-result.show{display:block}
+.avis-result.positive{background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.3);color:#86efac}
+.avis-result.negative{background:rgba(240,128,32,.12);border:1px solid rgba(240,128,32,.3);color:#f0d8bd}
+.avis-hint{font-size:.72rem;color:rgba(255,255,255,.4);margin-top:1.25rem}
+
+/* HORAIRES / CONTACT */
+#contact{background:var(--white)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:4rem;align-items:start}
+.horaire-list{display:flex;flex-direction:column;gap:0}
+.horaire-row{display:flex;justify-content:space-between;padding:.9rem 0;border-bottom:1px solid var(--border);font-size:.85rem}
+.horaire-day{font-weight:600;color:var(--charcoal)}
+.horaire-time{color:var(--text2)}
+.contact-card{background:var(--cream);border:1px solid var(--border);border-radius:14px;padding:2rem}
+.contact-item{display:flex;gap:1rem;align-items:flex-start;margin-bottom:1.5rem}
+.contact-item:last-child{margin-bottom:0}
+.contact-icon{width:38px;height:38px;background:var(--charcoal);color:var(--gold2);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.contact-label{font-size:.68rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--text3);font-weight:700;margin-bottom:.25rem}
+.contact-value{font-size:.9rem;color:var(--charcoal);font-weight:600}
+
+/* FOOTER */
+footer{background:var(--charcoal);padding:3rem 2rem;text-align:center}
+.footer-note{font-size:.75rem;color:rgba(255,255,255,.4);line-height:1.8}
+.footer-note a{color:var(--gold2);text-decoration:none;font-weight:600}
+.footer-note a:hover{text-decoration:underline}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.reveal.v{opacity:1;transform:translateY(0)}
+
+@media(max-width:900px){
+  nav{padding:0 1.5rem}
+  .n-links{display:none}
+  .n-links.open{display:flex;flex-direction:column;position:fixed;top:108px;left:0;right:0;background:var(--cream);padding:1.5rem;border-bottom:1px solid var(--border)}
+  .hamburger{display:flex}
+  .presta-grid,.contact-grid{grid-template-columns:1fr}
+  .gal-grid{grid-template-columns:repeat(2,1fr)}
+  .gal-item:first-child{grid-row:span 1;aspect-ratio:3/4}
+  .section{padding:5rem 1.5rem}
+}
+</style>
+</head>
+<body>
+
+<div class="demo-ribbon">
+  <span class="demo-badge">Exemple</span>
+  Ce site est une démonstration fictive réalisée par NovaSpot — <a href="https://novaspot.fr" target="_blank">voir novaspot.fr →</a>
+</div>
+
+<nav id="nav">
+  <a class="n-logo" href="#hero">
+    <svg class="n-mark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="20" cy="20" r="19" fill="#1a1a1a"/>
+      <circle cx="20" cy="20" r="19" fill="none" stroke="#e8a51a" stroke-width="1"/>
+      <text x="20" y="27" font-family="Playfair Display, serif" font-size="17" font-weight="600" fill="#f2ba3f" text-anchor="middle">GM</text>
+    </svg>
+    <span class="n-name">Garage Meunier</span>
+  </a>
+  <ul class="n-links" id="nLinks">
+    <li><a href="#prestations">Prestations</a></li>
+    <li><a href="#galerie">Galerie</a></li>
+    <li><a href="#avis">Avis</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="tel:+33320000000" class="n-cta">Prendre RDV atelier</a></li>
+  </ul>
+  <button class="hamburger" id="burger"><span></span><span></span><span></span></button>
+</nav>
+
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Garage automobile · Lille</div>
+    <h1 class="hero-title">Votre véhicule,<br/>entre de bonnes mains.</h1>
+    <p class="hero-sub">Révision, mécanique générale, pneumatiques et diagnostic électronique, pour tous types de véhicules à Lille.</p>
+    <div class="hero-btns">
+      <a href="tel:+33320000000" class="btn-p">Prendre RDV atelier →</a>
+      <a href="#prestations" class="btn-s">Voir nos prestations</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="prestations">
+  <div class="si">
+    <div class="s-tag reveal">Nos prestations</div>
+    <h2 class="s-title reveal">Un soin pour chaque<br/>envie.</h2>
+    <p class="s-sub reveal">Un entretien sérieux, des pièces de qualité, des délais tenus.</p>
+    <div class="presta-grid">
+      <div class="presta-row reveal"><div><div class="presta-name">Révision complète</div><div class="presta-desc">Contrôle des points de sécurité</div></div><div class="presta-price">Dès 89€</div></div>
+      <div class="presta-row reveal"><div><div class="presta-name">Vidange & filtres</div><div class="presta-desc">Huile, filtre à huile et à air</div></div><div class="presta-price">Dès 69€</div></div>
+      <div class="presta-row reveal"><div><div class="presta-name">Pneumatiques</div><div class="presta-desc">Montage, équilibrage inclus</div></div><div class="presta-price">Sur devis</div></div>
+      <div class="presta-row reveal"><div><div class="presta-name">Diagnostic électronique</div><div class="presta-desc">Lecture et analyse des défauts</div></div><div class="presta-price">39€</div></div>
+      <div class="presta-row reveal"><div><div class="presta-name">Freinage</div><div class="presta-desc">Plaquettes, disques, contrôle</div></div><div class="presta-price">Sur devis</div></div>
+      <div class="presta-row reveal"><div><div class="presta-name">Contrôle technique</div><div class="presta-desc">Préparation avant passage</div></div><div class="presta-price">49€</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="galerie">
+  <div class="si">
+    <div class="s-tag reveal">Galerie</div>
+    <h2 class="s-title reveal">Dans notre atelier.</h2>
+    <div class="gal-grid">
+      <div class="gal-item reveal"><img src="https://images.unsplash.com/photo-1723099971299-3789db53604c?auto=format&fit=crop&w=900&q=80" alt="Véhicule sur pont élévateur" loading="lazy"/></div>
+      <div class="gal-item reveal"><img src="https://images.unsplash.com/photo-1771340012319-0b4fca008b54?auto=format&fit=crop&w=700&q=80" alt="Mécanicien au travail" loading="lazy"/></div>
+      <div class="gal-item reveal"><img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=700&q=80" alt="Intervention sur moteur" loading="lazy"/></div>
+      <div class="gal-item reveal"><img src="https://images.unsplash.com/photo-1631720040176-0d789a643a78?auto=format&fit=crop&w=700&q=80" alt="Atelier équipé" loading="lazy"/></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="avis">
+  <div class="avis-glow"></div>
+  <div class="si center">
+    <div class="s-tag reveal center" style="justify-content:center">Fonctionnalité NovaSpot</div>
+    <h2 class="s-title reveal center">Comment vos clients<br/>laissent un avis.</h2>
+    <p class="s-sub reveal center">Ceci est une démo interactive du widget avis intégré à chaque site NovaSpot. Cliquez sur une étoile pour voir le comportement.</p>
+    <div class="avis-demo reveal">
+      <div class="avis-q">Comment s'est passée votre visite ?</div>
+      <div class="avis-stars" id="avisStars">
+        <span class="avis-star" data-v="1">★</span>
+        <span class="avis-star" data-v="2">★</span>
+        <span class="avis-star" data-v="3">★</span>
+        <span class="avis-star" data-v="4">★</span>
+        <span class="avis-star" data-v="5">★</span>
+      </div>
+      <div class="avis-result positive" id="avisPositive">✓ Redirection automatique vers la fiche Google de l'entreprise, pour transformer la satisfaction en avis public.</div>
+      <div class="avis-result negative" id="avisNegative">✉ L'avis reste privé : un message est envoyé directement au gérant, avec une réponse automatique proposée au client — jamais publié sans réponse.</div>
+      <div class="avis-hint">Widget identique sur tous les sites NovaSpot, accessible via QR code en boutique.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="si">
+    <div class="s-tag reveal">Infos pratiques</div>
+    <h2 class="s-title reveal">Horaires & contact.</h2>
+    <div class="contact-grid">
+      <div class="reveal-l">
+        <div class="horaire-list">
+          <div class="horaire-row"><div class="horaire-day">Lundi — Vendredi</div><div class="horaire-time">8h00 – 18h30</div></div>
+          <div class="horaire-row"><div class="horaire-day">Samedi</div><div class="horaire-time">8h30 – 12h30</div></div>
+          <div class="horaire-row"><div class="horaire-day">Dimanche</div><div class="horaire-time">Fermé</div></div>
+        </div>
+      </div>
+      <div class="contact-card reveal-r">
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div><div class="contact-label">Adresse</div><div class="contact-value">45 avenue du Général de Gaulle, 59000 Lille</div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div><div class="contact-label">Téléphone</div><div class="contact-value">03 20 00 00 00</div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div><div class="contact-label">Email</div><div class="contact-value">contact@garage-meunier-demo.fr</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="footer-note">Garage Meunier est un site fictif de démonstration. Modèle réalisé par <a href="https://novaspot.fr" target="_blank">NovaSpot</a>, l'agence digitale des commerces et artisans locaux.</p>
+</footer>
+
+<script>
+document.getElementById('burger').addEventListener('click',()=>document.getElementById('nLinks').classList.toggle('open'));
+document.querySelectorAll('#nLinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nLinks').classList.remove('open')));
+
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');obs.unobserve(e.target);}});},{threshold:.1});
+document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>obs.observe(el));
+
+const stars=document.querySelectorAll('.avis-star');
+const posBox=document.getElementById('avisPositive');
+const negBox=document.getElementById('avisNegative');
+stars.forEach(star=>{
+  star.addEventListener('mouseenter',()=>{
+    const v=+star.dataset.v;
+    stars.forEach(s=>s.classList.toggle('hovered',+s.dataset.v<=v));
+  });
+  star.addEventListener('mouseleave',()=>{
+    stars.forEach(s=>s.classList.remove('hovered'));
+  });
+  star.addEventListener('click',()=>{
+    const v=+star.dataset.v;
+    posBox.classList.remove('show');
+    negBox.classList.remove('show');
+    if(v>=4){posBox.classList.add('show');} else {negBox.classList.add('show');}
+  });
+});
+</script>
+</body>
+</html>

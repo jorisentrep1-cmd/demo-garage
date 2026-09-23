@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Garage Viallard — Mécanique à Saint-Savin</title>
-<meta name="description" content="Garage à Saint-Savin. Forfaits affichés, devis avant toute réparation, choix entre pièce d'origine et adaptable. Révision, freinage, pneus, diagnostic."/>
+<meta name="description" content="Garage toutes marques à Saint-Savin : forfaits affichés, choix entre pièce d'origine et adaptable, appel systématique avant toute réparation payante."/>
 <meta name="robots" content="noindex,nofollow"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -12,9 +12,9 @@
 <script>try{var t=localStorage.getItem("ns-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <style>
 /* ---------------------------------------------------------------
-   Un atelier : tôle, cambouis, et le jaune des consignes de sécurité.
-   Pas de rouge sportif — un garage de village ne vend pas du rêve,
-   il vend de la tranquillité.
+   Une grille dense de modules separes par des filets d'un pixel,
+   comme une planche de catalogue de pieces. Rien n'est arrondi,
+   rien ne flotte : tout est cale sur douze colonnes.
    --------------------------------------------------------------- */
 :root{
   --acier:#E5E6E3;
@@ -33,148 +33,165 @@
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
     --acier:#181A18;
-    --tole:#1F221F;
+    --tole:#202320;
     --cambouis:#EDEEEB;
-    --cambouis-doux:#C7CAC6;
-    --fonte:#949892;
-    --trait:#323632;
+    --cambouis-doux:#CDD0CC;
+    --fonte:#9CA09B;
+    --trait:#31352F;
     --signal:#E0A93B;
-    --signal-vif:#EFBE5C;
-    --sur-noir:#1F221F;
-    --sur-noir-doux:#484C47;
-    --sur-noir-accent:#7A5200;
+    --signal-vif:#EFBF5E;
+    --sur-noir:#202320;
+    --sur-noir-doux:#4A4F49;
+    --sur-noir-accent:#6E4A00;
     --focus:#E0A93B;
   }
 }
 :root[data-theme="dark"]{
   --acier:#181A18;
-  --tole:#1F221F;
+  --tole:#202320;
   --cambouis:#EDEEEB;
-  --cambouis-doux:#C7CAC6;
-  --fonte:#949892;
-  --trait:#323632;
+  --cambouis-doux:#CDD0CC;
+  --fonte:#9CA09B;
+  --trait:#31352F;
   --signal:#E0A93B;
-  --signal-vif:#EFBE5C;
-  --sur-noir:#1F221F;
-  --sur-noir-doux:#484C47;
-  --sur-noir-accent:#7A5200;
+  --signal-vif:#EFBF5E;
+  --sur-noir:#202320;
+  --sur-noir-doux:#4A4F49;
+  --sur-noir-accent:#6E4A00;
   --focus:#E0A93B;
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:3.6rem}
-body{background:var(--acier);color:var(--cambouis-doux);font-family:'Chivo',system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
-h1,h2,h3,.cond{font-family:'Saira Condensed',sans-serif;color:var(--cambouis);text-transform:uppercase;letter-spacing:.005em}
+body{background:var(--acier);color:var(--cambouis-doux);font-family:'Chivo',system-ui,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Saira Condensed',system-ui,sans-serif;color:var(--cambouis);font-weight:700;letter-spacing:.005em;text-transform:uppercase}
 .mono{font-family:'Roboto Mono',monospace;font-variant-numeric:tabular-nums}
 a{color:var(--signal)}
-:focus-visible{outline:2px solid var(--focus);outline-offset:3px}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
 img{max-width:100%;display:block}
-.env{max-width:1020px;margin:0 auto;padding-inline:1.5rem}
+.env{max-width:1180px;margin:0 auto;padding-inline:1.4rem}
 
-.demo{background:var(--cambouis);color:var(--sur-noir);padding:.5rem 1rem;text-align:center;font-size:.73rem;letter-spacing:.03em}
+.demo{background:var(--cambouis);color:var(--sur-noir);padding:.5rem 1rem;text-align:center;font-size:.74rem}
 .demo a{color:var(--sur-noir-accent);font-weight:700}
 .demo b{color:var(--sur-noir)}
 
-.barre{position:sticky;top:0;z-index:20;background:var(--acier);border-bottom:2px solid var(--cambouis)}
-.b-in{display:flex;align-items:center;gap:1.5rem;min-height:3.05rem}
-.b-marque{font-family:'Saira Condensed',sans-serif;font-weight:700;font-size:1.18rem;text-transform:uppercase;letter-spacing:.08em;color:var(--cambouis);text-decoration:none;flex-shrink:0}
-.b-liens{display:flex;gap:1.4rem;margin-left:auto}
-.b-liens a{font-size:.8rem;font-weight:500;color:var(--cambouis-doux);text-decoration:none;padding-block:.2rem;border-bottom:2px solid transparent}
+.barre{position:sticky;top:0;z-index:20;background:var(--acier);border-bottom:1px solid var(--trait)}
+.b-in{display:flex;align-items:center;gap:1.4rem;min-height:3.05rem}
+.b-marque{font-family:'Saira Condensed',sans-serif;font-weight:700;font-size:1.22rem;text-transform:uppercase;letter-spacing:.03em;color:var(--cambouis);text-decoration:none;flex-shrink:0}
+.b-liens{display:flex;gap:1.3rem;margin-left:auto}
+.b-liens a{font-family:'Roboto Mono',monospace;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--cambouis-doux);text-decoration:none;padding-block:.2rem;border-bottom:2px solid transparent}
 .b-liens a:hover{color:var(--cambouis);border-bottom-color:var(--signal)}
-.b-tel{font-family:'Saira Condensed',sans-serif;font-size:1rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:var(--signal);color:var(--tole);text-decoration:none;padding:.42rem 1.05rem;flex-shrink:0;white-space:nowrap}
+.b-tel{font-family:'Saira Condensed',sans-serif;font-size:.98rem;font-weight:700;letter-spacing:.03em;background:var(--signal);color:var(--tole);text-decoration:none;padding:.4rem 1rem;flex-shrink:0;white-space:nowrap}
 .b-tel:hover{background:var(--cambouis)}
 .b-court{display:none}
-@media(max-width:840px){.b-liens{display:none}.b-tel{margin-left:auto}.b-long{display:none}.b-court{display:inline}}
+@media(max-width:900px){.b-liens{display:none}.b-long{display:none}.b-court{display:inline}}
 
-header{padding-block:2.8rem 2.2rem;border-bottom:1px solid var(--trait)}
-.titre{font-size:clamp(2.4rem,6.6vw,4rem);font-weight:700;line-height:.96}
+/* --- grille d'ouverture, douze colonnes --- */
+.planche{display:grid;grid-template-columns:repeat(12,1fr);gap:1px;background:var(--trait);
+  border-bottom:1px solid var(--trait)}
+.case{background:var(--acier);padding:1.5rem 1.4rem;min-width:0}
+.case.photo{padding:0}
+.case.photo img{width:100%;height:clamp(140px,13vw,168px);object-fit:cover}
+.c-vue img{height:clamp(190px,17vw,218px)}
+.c-titre{grid-column:span 7;grid-row:span 2;display:flex;flex-direction:column;justify-content:center;padding:2.4rem 2rem}
+.c-vue{grid-column:span 5}
+.c-serre{grid-column:span 5}
+.c-ident{grid-column:span 4;display:flex;align-items:center}
+.c-dessous{grid-column:span 4}
+.c-outils{grid-column:span 4}
+.titre{font-size:clamp(2.1rem,5vw,3.6rem);line-height:.98}
 .titre span{color:var(--signal)}
-.accroche{margin-top:1rem;font-size:1.05rem;color:var(--cambouis-doux);max-width:50ch}
-.ident{margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.3rem 1.5rem;font-size:.88rem}
-.ident b{color:var(--cambouis);font-weight:700}
+.accroche{margin-top:.9rem;max-width:46ch;font-size:1rem}
+.ident{font-family:'Roboto Mono',monospace;font-size:.76rem;line-height:1.9;letter-spacing:.03em;color:var(--fonte)}
+.ident b{color:var(--cambouis);font-weight:500}
+@media(max-width:900px){
+  .c-titre{grid-column:span 12;grid-row:auto;padding:1.8rem 1.4rem}
+  .c-vue,.c-serre,.c-ident{grid-column:span 12}
+  .c-dessous,.c-outils{grid-column:span 6}
+  .case.photo img,.c-vue img{height:clamp(150px,34vw,200px)}
+}
 
-.ouverture{padding-block:2.8rem;border-bottom:1px solid var(--trait);background:var(--tole)}
-.ouverture p{font-family:'Saira Condensed',sans-serif;text-transform:uppercase;font-size:clamp(1.5rem,3.8vw,2.3rem);font-weight:700;line-height:1.1;color:var(--cambouis);max-width:20ch}
-.ouverture .suite{font-family:'Chivo',sans-serif;text-transform:none;font-size:1rem;font-weight:400;line-height:1.62;color:var(--cambouis-doux);max-width:58ch;margin-top:1.1rem}
+/* --- ce qu'on refuse --- */
+.refus{background:var(--tole);border-bottom:1px solid var(--trait)}
+.refus .env{padding-block:2.2rem;display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:2.4rem;align-items:baseline}
+.refus h2{font-size:clamp(1.4rem,3vw,2rem);line-height:1.05}
+.refus p{font-size:.97rem}
+@media(max-width:820px){.refus .env{grid-template-columns:1fr;gap:.8rem}}
 
-.sect{padding-block:3.2rem}
-.sect + .sect{border-top:1px solid var(--trait)}
-.etiq{font-family:'Roboto Mono',monospace;font-size:.7rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--signal);margin-bottom:.5rem}
-h2{font-size:clamp(1.7rem,4.2vw,2.4rem);font-weight:700;line-height:1.05}
-.intro{margin-top:.6rem;max-width:58ch;color:var(--cambouis-doux)}
+/* --- forfaits en grille dense --- */
+.section{padding-block:2.6rem}
+.tete{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem 1.4rem}
+.etiq{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--signal)}
+h2{font-size:clamp(1.4rem,3vw,2rem);line-height:1.05}
+.sous{margin-top:.5rem;max-width:56ch;font-size:.96rem}
 
-/* --- tableau des forfaits --- */
-.forfaits{margin-top:2rem;border-top:2px solid var(--cambouis)}
-.forf{display:grid;grid-template-columns:1fr 6.5rem;gap:.3rem 1.5rem;padding-block:1.2rem;border-bottom:1px solid var(--trait)}
-.f-nom{font-family:'Saira Condensed',sans-serif;font-size:1.34rem;font-weight:700;text-transform:uppercase;color:var(--cambouis);line-height:1.1}
-.f-prix{font-family:'Roboto Mono',monospace;font-size:1.12rem;font-weight:500;color:var(--cambouis);text-align:right;white-space:nowrap}
-.f-inc,.f-exc{font-size:.9rem;margin-top:.3rem;padding-left:1.15rem;position:relative}
-.f-inc{color:var(--cambouis-doux)}
-.f-exc{color:var(--fonte)}
-.f-inc::before{content:'+';position:absolute;left:0;color:var(--signal);font-weight:700}
-.f-exc::before{content:'–';position:absolute;left:0;color:var(--fonte);font-weight:700}
-.forf > div:first-child{grid-column:1}
-.f-detail{grid-column:1/-1}
+.forfaits{margin-top:1.6rem;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--trait);border:1px solid var(--trait)}
+.forfait{background:var(--acier);padding:1.25rem 1.2rem;display:flex;flex-direction:column}
+.f-prix{font-family:'Saira Condensed',sans-serif;font-size:1.75rem;font-weight:700;color:var(--cambouis);line-height:1}
+.f-nom{font-family:'Roboto Mono',monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--signal);margin-top:.4rem}
+.f-inclus{font-size:.9rem;margin-top:.8rem;padding-top:.7rem;border-top:1px solid var(--trait)}
+.f-hors{font-size:.85rem;margin-top:.75rem;padding-left:1.1rem;position:relative;color:var(--fonte)}
+.f-hors::before{content:'—';position:absolute;left:0;color:var(--signal)}
+@media(max-width:860px){.forfaits{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:540px){.forfaits{grid-template-columns:1fr}}
 
-/* --- les pièces --- */
-.pieces{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:2rem;border:2px solid var(--cambouis)}
-.piece{padding:1.5rem}
-.piece + .piece{border-left:2px solid var(--cambouis)}
-.pc-tit{font-family:'Saira Condensed',sans-serif;font-size:1.4rem;font-weight:700;text-transform:uppercase;color:var(--cambouis)}
-.pc-prix{font-family:'Roboto Mono',monospace;font-size:.86rem;color:var(--signal);margin-top:.2rem;letter-spacing:.02em}
-.pc-txt{margin-top:.7rem;font-size:.95rem}
-.pieces-pied{margin-top:1.1rem;font-size:.93rem;color:var(--fonte);max-width:60ch}
+/* --- origine / adaptable --- */
+.pieces{border-top:1px solid var(--trait);padding-block:2.6rem;background:var(--tole)}
+.choix{margin-top:1.6rem;display:grid;grid-template-columns:minmax(0,4fr) minmax(0,4fr) minmax(0,3fr);gap:1px;background:var(--trait);border:1px solid var(--trait)}
+.opt{background:var(--tole);padding:1.3rem 1.2rem}
+.opt h3{font-size:1.3rem;line-height:1}
+.opt .cote{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;color:var(--signal);margin-top:.3rem}
+.opt p{font-size:.9rem;margin-top:.75rem}
+.opt.photo{padding:0}
+.opt.photo img{width:100%;height:100%;object-fit:cover}
+.ecart{margin-top:1.2rem;border-left:3px solid var(--signal);padding:.85rem 1.1rem;background:var(--acier);font-size:.94rem;max-width:74ch}
+@media(max-width:860px){.choix{grid-template-columns:1fr 1fr}.opt.photo{grid-column:span 2}.opt.photo img{height:clamp(160px,30vw,220px)}}
+@media(max-width:540px){.choix{grid-template-columns:1fr}.opt.photo{grid-column:auto}}
 
-/* --- déroulé --- */
-.etapes{margin-top:2rem}
-.et{display:grid;grid-template-columns:2.6rem 1fr;gap:0 1.1rem;padding-block:1.3rem;border-top:1px solid var(--trait)}
-.et:last-child{border-bottom:1px solid var(--trait)}
-.et.cle{background:var(--tole);border-left:3px solid var(--signal);padding-left:1.1rem;margin-left:-1.1rem}
-.e-n{font-family:'Roboto Mono',monospace;font-size:1.1rem;color:var(--signal);font-weight:500}
-.e-t{font-family:'Saira Condensed',sans-serif;font-size:1.25rem;font-weight:700;text-transform:uppercase;color:var(--cambouis)}
-.e-p{margin-top:.2rem;max-width:58ch;font-size:.97rem}
+/* --- bande atelier --- */
+.atelier{position:relative;background:var(--cambouis)}
+.atelier img{width:100%;height:clamp(200px,27vw,330px);object-fit:cover}
+.atelier figcaption{position:absolute;left:0;bottom:0;background:var(--cambouis);color:var(--sur-noir);
+  font-family:'Roboto Mono',monospace;font-size:.76rem;padding:.65rem 1.1rem;max-width:34rem;line-height:1.5}
+@media(max-width:620px){.atelier figcaption{position:static;max-width:none}}
 
-.vue{background:var(--cambouis)}
-.vue img{width:100%;height:clamp(220px,36vw,380px);object-fit:cover}
-.vue figcaption{font-size:.77rem;color:var(--sur-noir-doux);padding:.6rem 1.5rem;max-width:1020px;margin:0 auto;font-family:'Roboto Mono',monospace}
+/* --- deroule sur une seule rangee --- */
+.deroule{padding-block:2.6rem}
+.etapes{margin-top:1.6rem;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--trait);border-top:2px solid var(--cambouis)}
+.etape{background:var(--acier);padding:1.2rem 1.15rem}
+.e-num{font-family:'Roboto Mono',monospace;font-size:.72rem;letter-spacing:.1em;color:var(--signal)}
+.e-titre{font-family:'Saira Condensed',sans-serif;font-size:1.3rem;font-weight:700;text-transform:uppercase;color:var(--cambouis);margin-top:.3rem;line-height:1}
+.e-txt{font-size:.89rem;margin-top:.55rem}
+@media(max-width:900px){.etapes{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.etapes{grid-template-columns:1fr}}
 
-.qa{border-top:1px solid var(--trait);padding-block:1.25rem}
-.qa:last-of-type{border-bottom:1px solid var(--trait)}
-.qa dt{font-family:'Saira Condensed',sans-serif;font-size:1.22rem;font-weight:700;text-transform:uppercase;color:var(--cambouis)}
-.qa dd{margin-top:.25rem;max-width:58ch;font-size:.97rem}
+/* --- questions --- */
+.questions{border-top:1px solid var(--trait);padding-block:2.6rem;background:var(--tole)}
+.qgrille{margin-top:1.4rem;display:grid;grid-template-columns:1fr 1fr;gap:1.4rem 2.8rem}
+.qa dt{font-family:'Saira Condensed',sans-serif;font-size:1.18rem;font-weight:700;text-transform:uppercase;color:var(--cambouis)}
+.qa dd{margin-top:.25rem;font-size:.93rem}
+@media(max-width:760px){.qgrille{grid-template-columns:1fr;gap:1.2rem}}
 
-.avis{display:grid;grid-template-columns:auto 1fr;gap:2.2rem;align-items:center;margin-top:1.8rem}
-.note{padding-right:2.2rem;border-right:1px solid var(--trait)}
-.note b{font-family:'Saira Condensed',sans-serif;font-size:3.8rem;font-weight:700;color:var(--cambouis);line-height:.85;display:block}
-.note .et2{color:var(--signal);letter-spacing:.14em;margin-top:.3rem}
-.note span{display:block;font-family:'Roboto Mono',monospace;font-size:.74rem;color:var(--fonte);margin-top:.4rem}
-
-.contact{background:var(--cambouis);color:var(--sur-noir);padding-block:3.2rem}
-.contact h2{color:var(--sur-noir)}
-.contact .etiq{color:var(--sur-noir-accent)}
-.c-grille{display:grid;grid-template-columns:1fr 1fr;gap:2.6rem;margin-top:1.8rem}
-.c-tel{font-family:'Saira Condensed',sans-serif;font-size:2.5rem;font-weight:700;color:var(--sur-noir);text-decoration:none;line-height:1}
+/* --- bande finale --- */
+.finale{background:var(--cambouis);color:var(--sur-noir);padding-block:2.8rem}
+.finale h2,.finale .c-tel{color:var(--sur-noir)}
+.finale .etiq{color:var(--sur-noir-accent)}
+.f-grille{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,1fr);gap:2.6rem;align-items:start}
+.note b{font-family:'Saira Condensed',sans-serif;font-size:3.4rem;font-weight:700;color:var(--sur-noir);line-height:.82;display:block}
+.note .et{color:var(--sur-noir-accent);letter-spacing:.14em;margin-top:.35rem}
+.note span{display:block;font-family:'Roboto Mono',monospace;font-size:.68rem;color:var(--sur-noir-doux);margin-top:.4rem}
+.c-tel{font-family:'Saira Condensed',sans-serif;font-size:2rem;font-weight:700;text-decoration:none;line-height:1;display:inline-block;margin-top:.45rem}
 .c-tel:hover{color:var(--sur-noir-accent)}
-.c-note{margin-top:.8rem;color:var(--sur-noir-doux);max-width:38ch;font-size:.95rem}
-.horaires div{display:flex;justify-content:space-between;gap:1.5rem;padding-block:.34rem;border-bottom:1px solid var(--sur-noir-doux);max-width:24rem;font-size:.93rem}
+.c-note{margin-top:.6rem;color:var(--sur-noir-doux);font-size:.92rem;max-width:36ch}
+.horaires{font-family:'Roboto Mono',monospace;font-size:.8rem;color:var(--sur-noir-doux)}
+.horaires div{display:flex;justify-content:space-between;gap:1rem;padding-block:.3rem;border-bottom:1px solid var(--sur-noir-doux)}
 .horaires div:last-child{border-bottom:0}
-.horaires b{color:var(--sur-noir);font-weight:700}
-.horaires span{color:var(--sur-noir-doux);font-family:'Roboto Mono',monospace;font-size:.86rem}
+.horaires b{color:var(--sur-noir);font-weight:500}
+@media(max-width:900px){.f-grille{grid-template-columns:1fr;gap:1.7rem}}
 
-footer{background:var(--cambouis);color:var(--sur-noir-doux);font-size:.77rem;padding-block:1.5rem 2.2rem;border-top:1px solid var(--sur-noir-doux)}
+footer{background:var(--cambouis);color:var(--sur-noir-doux);font-size:.76rem;padding-block:1.4rem 2rem;border-top:1px solid var(--sur-noir-doux)}
 footer a{color:var(--sur-noir-accent)}
 
-@media(max-width:760px){
-  /* le prix le plus long ("des 55 EUR / pneu") ne tient pas dans une
-     colonne fixe : on la laisse prendre ce qu'il lui faut */
-  .forf{grid-template-columns:1fr auto}
-  .f-prix{white-space:normal}
-  .pieces{grid-template-columns:1fr}
-  .piece + .piece{border-left:0;border-top:2px solid var(--cambouis)}
-  .c-grille{grid-template-columns:1fr;gap:1.8rem}
-  .avis{grid-template-columns:1fr;gap:1.1rem}
-  .note{padding-right:0;border-right:0;border-bottom:1px solid var(--trait);padding-bottom:1rem}
-}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 
 /* --- bascule clair / sombre --- */
@@ -182,7 +199,7 @@ footer a{color:var(--sur-noir-accent)}
   width:2rem;height:2rem;padding:0;flex-shrink:0;cursor:pointer;
   background:none;color:inherit;border:1px solid currentColor;border-radius:99px;opacity:.55}
 .b-theme:hover{opacity:1}
-@media(max-width:860px){.b-theme{margin-left:auto}.b-theme + .b-tel{margin-left:.5rem}}
+@media(max-width:900px){.b-theme{margin-left:auto}.b-theme + .b-tel{margin-left:.5rem}}
 </style>
 </head>
 <body>
@@ -203,206 +220,198 @@ footer a{color:var(--sur-noir-accent)}
   </div>
 </nav>
 
-<header id="haut">
-  <div class="env">
-    <h1 class="titre">On vous appelle<br/><span>avant</span> de réparer.</h1>
+<div class="planche" id="haut">
+  <div class="case c-titre">
+    <h1 class="titre">On vous appelle <span>avant</span> de réparer.</h1>
     <p class="accroche">Jamais une facture plus élevée que le devis sans que vous ayez dit oui au téléphone. C'est la règle de la maison depuis 2011.</p>
+  </div>
+  <div class="case photo c-vue">
+    <img src="/img/unsplash-photo-1615906655593-ad0386982a0f.jpg" alt="Mécanicien au travail sur un moteur"/>
+  </div>
+  <div class="case photo c-serre">
+    <img src="/img/unsplash-photo-1619642751034-765dfdf7c58e.jpg" alt="Serrage d'un écrou à la clé"/>
+  </div>
+  <div class="case c-ident">
     <div class="ident">
-      <span><b>Garage Viallard</b></span>
-      <span>12 route de Bordeaux, Saint-Savin</span>
-      <span>Mécanique · Carrosserie · Pneumatiques</span>
+      <b>Garage Viallard</b><br/>
+      12 route de Bordeaux, Saint-Savin<br/>
+      Mécanique · Carrosserie · Pneus<br/>
+      Essence, diesel et hybride
     </div>
   </div>
-</header>
+  <div class="case photo c-dessous">
+    <img src="/img/unsplash-photo-1702146713858-8e7d1cc29fe8.jpg" alt="Intervention sous un véhicule"/>
+  </div>
+  <div class="case photo c-outils">
+    <img src="/img/unsplash-photo-1637640125496-31852f042a60.jpg" alt="Outillage d'atelier"/>
+  </div>
+</div>
 
-<section class="ouverture">
+<section class="refus">
   <div class="env">
-    <p>Toutes marques. Y compris la vôtre.</p>
-    <p class="suite">On travaille sur tout ce qui roule, essence, diesel et hybride. Les seules choses qu'on refuse, ce sont les véhicules électriques — on n'a pas l'habilitation haute tension — et les boîtes automatiques à démonter, qu'on envoie chez un spécialiste à Saint-André. On vous le dit au téléphone, pas après avoir gardé la voiture trois jours.</p>
+    <h2>Toutes marques. Y compris la vôtre.</h2>
+    <p>Les seules choses qu'on refuse : les véhicules électriques, faute d'habilitation haute tension, et les boîtes automatiques à démonter, qu'on envoie chez un spécialiste à Saint-André. On vous le dit au téléphone, pas après avoir gardé la voiture trois jours.</p>
   </div>
 </section>
 
-<section class="sect" id="forfaits">
+<section class="section" id="forfaits">
   <div class="env">
-    <div class="etiq">Tarifs affichés</div>
-    <h2>Les forfaits, et ce qu'ils ne comprennent pas</h2>
-    <p class="intro">Un prix seul ne veut rien dire tant qu'on ne sait pas ce qu'il y a dedans. Voilà les deux.</p>
+    <div class="tete">
+      <span class="etiq">Tarifs affichés</span>
+      <h2>Les forfaits, et ce qu'ils ne comprennent pas</h2>
+    </div>
+    <p class="sous">Un prix seul ne veut rien dire tant qu'on ne sait pas ce qu'il y a dedans. Voilà les deux.</p>
 
     <div class="forfaits">
-      <div class="forf">
-        <div class="f-nom">Révision complète</div>
+      <div class="forfait">
         <div class="f-prix">dès 149 €</div>
-        <div class="f-detail">
-          <div class="f-inc">Vidange, filtres à huile, à air et d'habitacle, 30 points de contrôle, mise à niveau des liquides</div>
-          <div class="f-exc">Filtre à gasoil et bougies, facturés à part selon le modèle</div>
-        </div>
+        <div class="f-nom">Révision complète</div>
+        <p class="f-inclus">Vidange, filtres à huile, à air et d'habitacle, 30 points de contrôle, mise à niveau des liquides.</p>
+        <p class="f-hors">Filtre à gasoil et bougies, selon le modèle</p>
       </div>
-      <div class="forf">
-        <div class="f-nom">Vidange &amp; filtres</div>
+      <div class="forfait">
         <div class="f-prix">dès 79 €</div>
-        <div class="f-detail">
-          <div class="f-inc">Huile adaptée au moteur, filtre à huile, filtre à air, contrôle des niveaux</div>
-          <div class="f-exc">Huiles spécifiques constructeur, +15 à 30 € selon le véhicule</div>
-        </div>
+        <div class="f-nom">Vidange &amp; filtres</div>
+        <p class="f-inclus">Huile adaptée au moteur, filtre à huile, filtre à air, contrôle des niveaux.</p>
+        <p class="f-hors">Huiles spécifiques constructeur, +15 à 30 €</p>
       </div>
-      <div class="forf">
-        <div class="f-nom">Freinage avant</div>
+      <div class="forfait">
         <div class="f-prix">dès 120 €</div>
-        <div class="f-detail">
-          <div class="f-inc">Plaquettes, main-d'œuvre, contrôle des disques et purge si nécessaire</div>
-          <div class="f-exc">Disques, si l'usure les condamne — on vous montre la cote avant</div>
-        </div>
+        <div class="f-nom">Freinage avant</div>
+        <p class="f-inclus">Plaquettes, main-d'œuvre, contrôle des disques et purge si nécessaire.</p>
+        <p class="f-hors">Disques, si l'usure les condamne — on vous montre la cote</p>
       </div>
-      <div class="forf">
-        <div class="f-nom">Pneumatiques</div>
-        <div class="f-prix">dès 55 € / pneu</div>
-        <div class="f-detail">
-          <div class="f-inc">Montage, équilibrage, valve neuve, recyclage de l'ancien</div>
-          <div class="f-exc">Géométrie, 60 € — utile seulement si l'usure est irrégulière</div>
-        </div>
+      <div class="forfait">
+        <div class="f-prix">dès 55 €</div>
+        <div class="f-nom">Pneumatique, l'unité</div>
+        <p class="f-inclus">Montage, équilibrage, valve neuve, recyclage de l'ancien.</p>
+        <p class="f-hors">Géométrie, 60 € — utile si l'usure est irrégulière</p>
       </div>
-      <div class="forf">
-        <div class="f-nom">Diagnostic électronique</div>
+      <div class="forfait">
         <div class="f-prix">49 €</div>
-        <div class="f-detail">
-          <div class="f-inc">Lecture des défauts, interprétation, compte rendu écrit que vous gardez</div>
-          <div class="f-exc">Déduit de la facture si vous faites la réparation chez nous</div>
-        </div>
+        <div class="f-nom">Diagnostic électronique</div>
+        <p class="f-inclus">Lecture des défauts, interprétation, compte rendu écrit que vous gardez.</p>
+        <p class="f-hors">Déduit de la facture si la réparation se fait ici</p>
       </div>
-      <div class="forf">
-        <div class="f-nom">Pré-contrôle technique</div>
+      <div class="forfait">
         <div class="f-prix">39 €</div>
-        <div class="f-detail">
-          <div class="f-inc">Les 133 points du contrôle passés en revue, liste des refus probables</div>
-          <div class="f-exc">Le contrôle lui-même : on n'est pas centre agréé, on prépare seulement</div>
-        </div>
+        <div class="f-nom">Pré-contrôle technique</div>
+        <p class="f-inclus">Les 133 points du contrôle passés en revue, liste des refus probables.</p>
+        <p class="f-hors">Le contrôle lui-même : on prépare, on ne valide pas</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="sect" id="pieces">
+<section class="pieces" id="pieces">
   <div class="env">
-    <div class="etiq">Le choix qu'on vous laisse</div>
-    <h2>Pièce d'origine ou adaptable</h2>
-    <p class="intro">La plupart des garages choisissent pour vous. Nous, on vous donne les deux prix et vous tranchez.</p>
+    <div class="tete">
+      <span class="etiq">Le choix qu'on vous laisse</span>
+      <h2>Pièce d'origine ou adaptable</h2>
+    </div>
+    <p class="sous">La plupart des garages choisissent pour vous. Nous, on donne les deux prix et vous tranchez.</p>
 
-    <div class="pieces">
-      <div class="piece">
-        <div class="pc-tit">D'origine</div>
-        <div class="pc-prix">référence constructeur</div>
-        <p class="pc-txt">La pièce que le constructeur monte en usine. Plus chère, garantie constructeur, indispensable si la voiture est encore sous garantie ou si vous comptez la revendre avec son carnet.</p>
+    <div class="choix">
+      <div class="opt">
+        <h3>D'origine</h3>
+        <div class="cote">Référence constructeur</div>
+        <p>La pièce montée en usine. Plus chère, garantie constructeur, indispensable si la voiture est encore sous garantie ou si vous comptez la revendre avec son carnet.</p>
       </div>
-      <div class="piece">
-        <div class="pc-tit">Adaptable</div>
-        <div class="pc-prix">30 à 50 % moins cher</div>
-        <p class="pc-txt">Fabriquée par un équipementier — souvent le même qui fournit le constructeur, sans le logo. Qualité équivalente sur la plupart des pièces d'usure. On vous dit lesquelles, et surtout lesquelles on déconseille.</p>
+      <div class="opt">
+        <h3>Adaptable</h3>
+        <div class="cote">30 à 50 % moins cher</div>
+        <p>Fabriquée par un équipementier — souvent le même qui fournit le constructeur, sans le logo. Qualité équivalente sur la plupart des pièces d'usure. On vous dit lesquelles, et surtout lesquelles on déconseille.</p>
+      </div>
+      <div class="opt photo">
+        <img src="/img/unsplash-photo-1771340012319-0b4fca008b54.jpg" alt="Intervention sur un moteur en atelier"/>
       </div>
     </div>
-    <p class="pieces-pied">Sur un freinage avant, l'écart est d'environ 60 €. Sur un embrayage, il peut atteindre 300 €. On vous annonce les deux montants au téléphone avant de commander quoi que ce soit.</p>
+    <p class="ecart">Sur un freinage avant, l'écart est d'environ 60 €. Sur un embrayage, il peut atteindre 300 €. On vous annonce les deux montants au téléphone avant de commander quoi que ce soit.</p>
   </div>
 </section>
 
-<figure class="vue">
-  <img src="/img/unsplash-photo-1631720040176-0d789a643a78.jpg" alt="Atelier de mécanique"/>
+<figure class="atelier">
+  <img src="/img/unsplash-photo-1723099971299-3789db53604c.jpg" alt="L'atelier et ses ponts élévateurs"/>
   <figcaption>L'atelier, route de Bordeaux — deux ponts, un pour les entretiens, un pour les réparations longues.</figcaption>
 </figure>
 
-<section class="sect" id="deroule">
+<section class="deroule" id="deroule">
   <div class="env">
-    <div class="etiq">Déroulé</div>
-    <h2>Ce qui se passe quand vous déposez la voiture</h2>
-
+    <div class="tete">
+      <span class="etiq">Déroulé</span>
+      <h2>Quand vous déposez la voiture</h2>
+    </div>
     <div class="etapes">
-      <div class="et">
-        <div class="e-n">01</div>
-        <div>
-          <div class="e-t">Vous déposez</div>
-          <p class="e-p">Le matin entre 8 h et 9 h. On note ce que vous avez constaté — un bruit, un voyant, une odeur. Même si vous ne savez pas le décrire, dites-le comme vous pouvez.</p>
-        </div>
+      <div class="etape">
+        <div class="e-num">01</div>
+        <div class="e-titre">Vous déposez</div>
+        <p class="e-txt">Entre 8 h et 9 h. On note ce que vous avez constaté : un bruit, un voyant, une odeur. Dites-le comme vous pouvez.</p>
       </div>
-      <div class="et cle">
-        <div class="e-n">02</div>
-        <div>
-          <div class="e-t">On vous appelle</div>
-          <p class="e-p">Avant de démonter quoi que ce soit de payant. On vous dit ce qu'on a trouvé, le prix des deux options de pièce, et le délai. Vous dites oui ou non. Si on ne vous joint pas, la voiture attend — on ne décide pas à votre place.</p>
-        </div>
+      <div class="etape">
+        <div class="e-num">02</div>
+        <div class="e-titre">On vous appelle</div>
+        <p class="e-txt">Avant de démonter quoi que ce soit de payant : ce qu'on a trouvé, le prix des deux options de pièce, le délai. Si on ne vous joint pas, la voiture attend.</p>
       </div>
-      <div class="et">
-        <div class="e-n">03</div>
-        <div>
-          <div class="e-t">On répare</div>
-          <p class="e-p">Les pièces changées sont mises de côté dans un carton à votre nom. Vous pouvez les récupérer ou les regarder — on vous montre l'usure sur l'ancienne.</p>
-        </div>
+      <div class="etape">
+        <div class="e-num">03</div>
+        <div class="e-titre">On répare</div>
+        <p class="e-txt">Les pièces changées sont mises de côté dans un carton à votre nom. On vous montre l'usure sur l'ancienne.</p>
       </div>
-      <div class="et">
-        <div class="e-n">04</div>
-        <div>
-          <div class="e-t">Vous récupérez</div>
-          <p class="e-p">La facture reprend ligne par ligne ce qu'on s'était dit au téléphone. Si le montant a bougé, c'est qu'on vous a rappelé entre-temps.</p>
-        </div>
+      <div class="etape">
+        <div class="e-num">04</div>
+        <div class="e-titre">Vous récupérez</div>
+        <p class="e-txt">La facture reprend ligne par ligne ce qu'on s'était dit au téléphone. Si le montant a bougé, c'est qu'on vous a rappelé.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="sect" id="questions">
+<section class="questions" id="questions">
   <div class="env">
-    <div class="etiq">Questions</div>
-    <h2>Ce qu'on nous demande au comptoir</h2>
-    <dl>
+    <div class="tete">
+      <span class="etiq">Questions</span>
+      <h2>Ce qu'on nous demande au comptoir</h2>
+    </div>
+    <dl class="qgrille">
       <div class="qa">
         <dt>« Vous prêtez une voiture ? »</dt>
-        <dd>Deux véhicules de prêt, gratuits, à réserver en même temps que l'intervention. Ils partent vite : demandez-les au moment de prendre rendez-vous, pas le matin même.</dd>
+        <dd>Deux véhicules de prêt, gratuits. Ils partent vite : réservez-les en prenant rendez-vous, pas le matin même.</dd>
       </div>
       <div class="qa">
-        <dt>« Je peux venir avec mes propres pièces ? »</dt>
-        <dd>Oui, et on ne fait pas la tête. On facture alors la main-d'œuvre seule, et la garantie ne couvre que notre travail, pas la pièce que vous avez apportée.</dd>
+        <dt>« Je peux venir avec mes pièces ? »</dt>
+        <dd>Oui, et on ne fait pas la tête. On facture la main-d'œuvre seule, et la garantie ne couvre que notre travail.</dd>
       </div>
       <div class="qa">
         <dt>« Combien de temps d'attente ? »</dt>
-        <dd>Un entretien, trois à cinq jours. Une panne immobilisante, on essaie de caler dans la journée — on garde toujours un créneau libre pour ça.</dd>
+        <dd>Un entretien, trois à cinq jours. Une panne immobilisante, on essaie de caler dans la journée : on garde un créneau pour ça.</dd>
       </div>
       <div class="qa">
         <dt>« Vous faites le contrôle technique ? »</dt>
-        <dd>Non, on n'est pas centre agréé. On fait le pré-contrôle à 39 €, et on vous dit exactement ce qui recalera pour que vous ne payiez pas deux passages.</dd>
+        <dd>Non, on n'est pas centre agréé. On fait le pré-contrôle à 39 € et on vous dit ce qui recalera, pour éviter deux passages.</dd>
       </div>
     </dl>
   </div>
 </section>
 
-<section class="sect">
+<section class="finale" id="contact">
   <div class="env">
-    <div class="etiq">Avis</div>
-    <h2>Ce qu'en disent les clients</h2>
-    <div class="avis">
+    <div class="f-grille">
       <div class="note">
         <b>4,7</b>
-        <div class="et2">★★★★★</div>
+        <div class="et">★★★★★</div>
         <span>81 AVIS GOOGLE</span>
       </div>
       <div>
-        <p>Un carton avec un QR code est agrafé à chaque facture. Vous scannez, vous écrivez deux lignes, c'est fini. Si quelque chose n'a pas été, le même code permet de nous le dire en direct — on préfère le savoir avant que ça finisse en ligne.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <div class="env">
-    <div class="etiq">Contact</div>
-    <h2>Prendre rendez-vous</h2>
-    <div class="c-grille">
-      <div>
+        <span class="etiq">Contact</span>
         <a class="c-tel" href="tel:+33557000001">05 57 00 00 01</a>
         <p class="c-note">On décroche à l'atelier. Si ça sonne dans le vide, c'est qu'on est sous une voiture — rappelez dans dix minutes, ça marche toujours.</p>
         <p class="c-note">12 route de Bordeaux, 33920 Saint-Savin</p>
       </div>
       <div class="horaires">
-        <div><b>Lundi au jeudi</b> <span>8 h – 12 h · 14 h – 18 h</span></div>
-        <div><b>Vendredi</b> <span>8 h – 12 h · 14 h – 17 h</span></div>
-        <div><b>Samedi</b> <span>8 h – 12 h</span></div>
-        <div><b>Dimanche</b> <span>fermé</span></div>
+        <div><b>Lundi – jeudi</b><span>8 h – 12 h · 14 h – 18 h</span></div>
+        <div><b>Vendredi</b><span>8 h – 12 h · 14 h – 17 h</span></div>
+        <div><b>Samedi</b><span>8 h – 12 h</span></div>
+        <div><b>Dimanche</b><span>fermé</span></div>
       </div>
     </div>
   </div>

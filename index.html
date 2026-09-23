@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Chivo:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<script>try{var t=localStorage.getItem("ns-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <style>
 /* ---------------------------------------------------------------
    Un atelier : tôle, cambouis, et le jaune des consignes de sécurité.
@@ -175,6 +176,13 @@ footer a{color:var(--sur-noir-accent)}
   .note{padding-right:0;border-right:0;border-bottom:1px solid var(--trait);padding-bottom:1rem}
 }
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* --- bascule clair / sombre --- */
+.b-theme{display:inline-flex;align-items:center;justify-content:center;
+  width:2rem;height:2rem;padding:0;flex-shrink:0;cursor:pointer;
+  background:none;color:inherit;border:1px solid currentColor;border-radius:99px;opacity:.55}
+.b-theme:hover{opacity:1}
+@media(max-width:860px){.b-theme{margin-left:auto}.b-theme + .b-tel{margin-left:.5rem}}
 </style>
 </head>
 <body>
@@ -190,6 +198,7 @@ footer a{color:var(--sur-noir-accent)}
       <a href="#deroule">Déroulé</a>
       <a href="#questions">Questions</a>
     </div>
+    <button class="b-theme" type="button" aria-label="Passer en thème sombre"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"></svg></button>
     <a class="b-tel" href="tel:+33557000001"><span class="b-long">05 57 00 00 01</span><span class="b-court">Appeler</span></a>
   </div>
 </nav>
@@ -406,5 +415,30 @@ footer a{color:var(--sur-noir-accent)}
   </div>
 </footer>
 
+
+<script>
+(function(){
+  var b = document.querySelector(".b-theme"); if(!b) return;
+  var svg = b.querySelector("svg"), r = document.documentElement;
+  var LUNE = '<path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>';
+  var SOLEIL = '<circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M5.1 5.1l1.4 1.4'
+    + 'M17.5 17.5l1.4 1.4M2.5 12h2M19.5 12h2M5.1 18.9l1.4-1.4M17.5 6.5l1.4-1.4"/>';
+  function courant(){
+    return r.getAttribute("data-theme")
+        || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  }
+  function peindre(t){
+    svg.innerHTML = t === "dark" ? SOLEIL : LUNE;
+    b.setAttribute("aria-label", t === "dark" ? "Passer en thème clair" : "Passer en thème sombre");
+  }
+  peindre(courant());
+  b.addEventListener("click", function(){
+    var t = courant() === "dark" ? "light" : "dark";
+    r.setAttribute("data-theme", t);
+    try{ localStorage.setItem("ns-theme", t); }catch(e){}
+    peindre(t);
+  });
+})();
+</script>
 </body>
 </html>

@@ -95,7 +95,8 @@ img{max-width:100%;display:block}
 .demo b{color:var(--sur-noir)}
 
 /* --- barre pleine largeur, posee sur la photo --- */
-.barre{position:absolute;top:0;left:0;right:0;z-index:20;background:rgba(8,8,7,.94);padding-block:.9rem}
+.barre{position:sticky;top:0;left:0;right:0;z-index:40;background:rgba(8,8,7,.94);padding-block:.9rem;transition:background .25s ease}
+.barre.fixe{background:#080807;box-shadow:0 2px 0 var(--ambre-photo)}
 .b-in{display:flex;align-items:center;gap:1.5rem;min-height:2.6rem}
 .b-marque{font-family:'Archivo Black',sans-serif;font-size:1.32rem;text-transform:uppercase;letter-spacing:-.02em;
   color:#F2F1EE;text-decoration:none;line-height:1;flex-shrink:0}
@@ -104,6 +105,7 @@ img{max-width:100%;display:block}
 .b-liens a{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#CFCCC5;
   text-decoration:none;padding-block:.3rem;border-bottom:2px solid transparent}
 .b-liens a:hover{color:#F2F1EE;border-bottom-color:var(--ambre-photo)}
+.b-liens a.actif{color:#F2F1EE;border-bottom-color:var(--ambre-photo)}
 .b-tel{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:var(--ambre-photo);
   color:#12120F;text-decoration:none;padding:.8rem 1.3rem;white-space:nowrap}
 .b-tel:hover{background:#F2F1EE;color:#12120F}
@@ -112,7 +114,7 @@ img{max-width:100%;display:block}
 @media(max-width:520px){.env{padding-inline:1.2rem}.b-in{gap:.7rem}.b-marque{font-size:1.1rem}.b-tel{padding:.7rem 1rem}}
 
 /* --- ouverture : l'atelier en grand --- */
-.ouverture{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
+.ouverture{position:relative;min-height:calc(100svh - 3.9rem);display:flex;align-items:flex-end;overflow:hidden;margin-top:-3.9rem;padding-top:3.9rem}
 .ouverture > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%}
 .ouverture .env{position:relative;z-index:2;width:100%;display:flex;align-items:flex-end;padding-block:0 3.5rem}
 .ouv-txt{background:rgba(10,10,9,.92);padding:2.6rem 2.4rem 2.2rem;max-width:min(46rem,62%);
@@ -232,9 +234,7 @@ footer a{color:var(--encre)}
   </div>
 </div>
 
-<header class="ouverture" id="haut">
-  <img src="/img/g-atelier.jpg" alt="L'atelier et ses ponts élévateurs" width="1500" height="2026" fetchpriority="high"/>
-  <nav class="barre" aria-label="Accès rapide">
+<nav class="barre" aria-label="Accès rapide">
     <div class="env b-in">
       <a class="b-marque" href="#haut">Garage <span>Viallard</span></a>
       <div class="b-liens">
@@ -247,6 +247,10 @@ footer a{color:var(--encre)}
       <a class="b-tel" href="tel:+33557000001"><span class="b-long">05 57 00 00 01</span><span class="b-court">Appeler</span></a>
     </div>
   </nav>
+
+<header class="ouverture" id="haut">
+  <img src="/img/g-atelier.jpg" alt="L'atelier et ses ponts élévateurs" width="1500" height="2026" fetchpriority="high"/>
+  
   <div class="env">
     <div class="ouv-txt">
       <div class="etiq">Mécanique · Carrosserie · Pneus · Saint-Savin</div>
@@ -458,6 +462,39 @@ footer a{color:var(--encre)}
     try{ localStorage.setItem("ns-theme", t); }catch(e){}
     peindre(t);
   });
+})();
+</script>
+
+<script>
+/* Barre verrouillee et reperage de section.
+   - .fixe : fond plus opaque des qu'on a quitte le haut de page.
+   - .actif : le lien de la section qu'on est en train de lire.
+   Tout est en supplement : sans JavaScript la barre reste collante
+   (c'est du CSS) et les liens fonctionnent normalement. */
+(function(){
+  var barre = document.querySelector('.barre');
+  if(barre){
+    var marquer = function(){ barre.classList.toggle('fixe', window.scrollY > 24); };
+    marquer();
+    addEventListener('scroll', marquer, {passive:true});
+  }
+  var liens = [].slice.call(document.querySelectorAll('.b-liens a[href^="#"]'));
+  if(!liens.length || !('IntersectionObserver' in window)) return;
+  var parSection = {};
+  liens.forEach(function(a){
+    var id = a.getAttribute('href').slice(1);
+    var s = document.getElementById(id);
+    if(s) parSection[id] = a;
+  });
+  var vues = {};
+  var obs = new IntersectionObserver(function(entrees){
+    entrees.forEach(function(e){ vues[e.target.id] = e.isIntersecting ? e.intersectionRatio : 0; });
+    var meilleur = null, score = 0;
+    Object.keys(vues).forEach(function(id){ if(vues[id] > score){ score = vues[id]; meilleur = id; } });
+    liens.forEach(function(a){ a.classList.remove('actif'); });
+    if(meilleur && parSection[meilleur]) parSection[meilleur].classList.add('actif');
+  }, {rootMargin:'-20% 0px -60% 0px', threshold:[0,.25,.5,1]});
+  Object.keys(parSection).forEach(function(id){ obs.observe(document.getElementById(id)); });
 })();
 </script>
 </body>

@@ -479,22 +479,52 @@ footer a{color:var(--encre)}
     addEventListener('scroll', marquer, {passive:true});
   }
   var liens = [].slice.call(document.querySelectorAll('.b-liens a[href^="#"]'));
-  if(!liens.length || !('IntersectionObserver' in window)) return;
-  var parSection = {};
+  if(!liens.length) return;
+
+  /* On repere la partie lue par sa position, pas par un ratio d'intersection :
+     une section plus haute que la bande de mesure n'atteint jamais le seuil,
+     et l'indicateur reste alors eteint sur toute la page. */
+  var parts = [];
   liens.forEach(function(a){
-    var id = a.getAttribute('href').slice(1);
-    var s = document.getElementById(id);
-    if(s) parSection[id] = a;
+    var s = document.getElementById(a.getAttribute('href').slice(1));
+    if(s) parts.push({lien:a, sec:s});
   });
-  var vues = {};
-  var obs = new IntersectionObserver(function(entrees){
-    entrees.forEach(function(e){ vues[e.target.id] = e.isIntersecting ? e.intersectionRatio : 0; });
-    var meilleur = null, score = 0;
-    Object.keys(vues).forEach(function(id){ if(vues[id] > score){ score = vues[id]; meilleur = id; } });
+  if(!parts.length) return;
+
+  var attente = false;
+  var reperer = function(){
+    attente = false;
+    /* On trie a chaque mesure : l'ordre du menu n'est pas forcement celui de
+       la page, et une image qui arrive tard peut decaler les sections. */
+    parts.sort(function(x,y){
+      return x.sec.getBoundingClientRect().top - y.sec.getBoundingClientRect().top;
+    });
+    var haut = 0;
+    if(barre){
+      var rb = barre.getBoundingClientRect();
+      if(rb.bottom > 0) haut = rb.bottom;
+    }
+    /* La ligne de lecture : au tiers de ce qui reste visible sous la barre. */
+    var ligne = haut + (innerHeight - haut) / 3;
+    var courant = null;
+    parts.forEach(function(p){
+      if(p.sec.getBoundingClientRect().top <= ligne) courant = p;
+    });
+    /* Tout en bas de page, la derniere partie l'emporte : sinon une section
+       courte placee en fin de page ne serait jamais atteignable. */
+    if(scrollY + innerHeight >= document.documentElement.scrollHeight - 2){
+      courant = parts[parts.length - 1];
+    }
     liens.forEach(function(a){ a.classList.remove('actif'); });
-    if(meilleur && parSection[meilleur]) parSection[meilleur].classList.add('actif');
-  }, {rootMargin:'-20% 0px -60% 0px', threshold:[0,.25,.5,1]});
-  Object.keys(parSection).forEach(function(id){ obs.observe(document.getElementById(id)); });
+    if(courant) courant.lien.classList.add('actif');
+  };
+  var planifier = function(){
+    if(!attente){ attente = true; requestAnimationFrame(reperer); }
+  };
+  addEventListener('scroll', planifier, {passive:true});
+  addEventListener('resize', planifier);
+  addEventListener('load', planifier);
+  reperer();
 })();
 </script>
 </body>

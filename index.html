@@ -24,16 +24,16 @@
   --noir2:#1A1A18;
   --encre:#12120F;
   --encre-doux:#46453F;
-  --acier:#6A6862;
+  --acier:#5F5D57;
   --trait:#D2CFC8;
-  --ambre:#8F4A0B;        /* sur le fond de page, qui bascule */
-  --ambre-photo:#F0A85C;  /* sur un voile pose sur photo : fige dans les deux themes */
-  --ambre-inv:#F0A85C;    /* sur la bande qui s'inverse avec le theme */
+  --ambre:#A3231C;        /* rouge, sur le fond de page qui bascule */
+  --ambre-photo:#E8574E;  /* sur une carte posee sur photo : fige dans les deux themes */
+  --ambre-inv:#E8574E;    /* sur la bande qui s'inverse avec le theme */
   --sur-noir:#F2F1EE;
   --sur-noir-doux:#A9A69F;
   --sur-ambre:#12120F;
   --voile:rgba(10,10,9,.74);
-  --focus:#B25E12;
+  --focus:#A3231C;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
@@ -45,9 +45,9 @@
     --encre-doux:#C7C4BC;
     --acier:#928F87;
     --trait:#2C2B28;
-    --ambre:#E39445;
-    --ambre-photo:#F0A85C;
-    --ambre-inv:#8F4A0B;
+    --ambre:#F07A72;
+    --ambre-photo:#E8574E;
+    --ambre-inv:#A3231C;
     --sur-noir:#141413;
     --sur-noir-doux:#57554F;
     --sur-ambre:#141413;
@@ -63,9 +63,9 @@
   --encre-doux:#C7C4BC;
   --acier:#928F87;
   --trait:#2C2B28;
-  --ambre:#E39445;
-  --ambre-photo:#F0A85C;
-  --ambre-inv:#8F4A0B;
+  --ambre:#F07A72;
+  --ambre-photo:#E8574E;
+  --ambre-inv:#A3231C;
   --sur-noir:#141413;
   --sur-noir-doux:#57554F;
   --sur-ambre:#141413;
@@ -85,41 +85,50 @@ img{max-width:100%;display:block}
 .etiq{font-size:.66rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--ambre)}
 
 .demo{background:var(--noir);color:var(--sur-noir);padding:.5rem 1rem;text-align:center;font-size:.72rem}
+/* bandeau de service, convention des sites d'artisans francais */
+.service{background:var(--fond2);border-bottom:1px solid var(--trait);font-size:.74rem;color:var(--acier)}
+.service .env{display:flex;flex-wrap:wrap;align-items:center;gap:.3rem 1.8rem;padding-block:.55rem}
+.service b{color:var(--encre);font-weight:700}
+.service .droite{margin-left:auto}
+@media(max-width:700px){.service .droite{margin-left:0}}
 .demo a{color:var(--sur-noir);font-weight:700}
 .demo b{color:var(--sur-noir)}
 
-/* --- barre : elle fait partie du panneau, elle n'est plus posee
-       sur une image --- */
-.barre{position:sticky;top:0;z-index:20;background:var(--noir);padding-block:.9rem}
+/* --- barre pleine largeur, posee sur la photo --- */
+.barre{position:absolute;top:0;left:0;right:0;z-index:20;background:rgba(8,8,7,.94);padding-block:.9rem}
 .b-in{display:flex;align-items:center;gap:1.5rem;min-height:2.6rem}
 .b-marque{font-family:'Archivo Black',sans-serif;font-size:1.32rem;text-transform:uppercase;letter-spacing:-.02em;
-  color:var(--sur-noir);text-decoration:none;line-height:1;flex-shrink:0}
-.b-marque span{color:var(--ambre-inv)}
+  color:#F2F1EE;text-decoration:none;line-height:1;flex-shrink:0}
+.b-marque span{color:var(--ambre-photo)}
 .b-liens{display:flex;gap:1.6rem;margin-left:auto}
-.b-liens a{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--sur-noir);
-  opacity:.72;text-decoration:none;padding-block:.3rem;border-bottom:2px solid transparent}
-.b-liens a:hover{opacity:1;border-bottom-color:var(--ambre-inv)}
-.b-tel{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:var(--ambre-inv);
-  color:var(--noir);text-decoration:none;padding:.8rem 1.3rem;white-space:nowrap}
-.b-tel:hover{opacity:.85}
+.b-liens a{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#CFCCC5;
+  text-decoration:none;padding-block:.3rem;border-bottom:2px solid transparent}
+.b-liens a:hover{color:#F2F1EE;border-bottom-color:var(--ambre-photo)}
+.b-tel{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:var(--ambre-photo);
+  color:#12120F;text-decoration:none;padding:.8rem 1.3rem;white-space:nowrap}
+.b-tel:hover{background:#F2F1EE;color:#12120F}
 .b-court{display:none}
 @media(max-width:940px){.b-liens{display:none}.b-long{display:none}.b-court{display:inline}}
 @media(max-width:520px){.env{padding-inline:1.2rem}.b-in{gap:.7rem}.b-marque{font-size:1.1rem}.b-tel{padding:.7rem 1rem}}
 
-/* --- ouverture : un panneau d'atelier. Aplat, typo enorme, aucune
-       photo derriere le texte. Un garage se signale comme une
-       enseigne, pas comme une affiche de cinema. --- */
-.panneau{background:var(--noir);color:var(--sur-noir);padding-block:clamp(3.5rem,9vw,7rem) clamp(3rem,7vw,5.5rem)}
-.panneau .etiq{color:var(--ambre-inv);display:block;margin-bottom:1.4rem}
-.panneau h1{font-size:clamp(2.6rem,8.4vw,6.4rem);color:var(--sur-noir);max-width:14ch;line-height:.94}
-.panneau h1 span{color:var(--ambre-inv)}
-.pan-sous{margin-top:1.6rem;max-width:48ch;font-size:1rem;color:var(--sur-noir);opacity:.8}
-.pan-pied{display:flex;flex-wrap:wrap;gap:.5rem 3rem;margin-top:clamp(2rem,5vw,3.2rem);padding-top:1.3rem;
-  border-top:2px solid var(--ambre-inv);font-size:.84rem;color:var(--sur-noir);opacity:.8}
-.pan-pied b{opacity:1;font-weight:700}
-
-/* la photo arrive apres le panneau, en bande pleine largeur */
-.atelier-bande img{width:100%;height:clamp(240px,34vw,460px);object-fit:cover;object-position:center 45%}
+/* --- ouverture : l'atelier en grand --- */
+.ouverture{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
+.ouverture > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%}
+.ouverture .env{position:relative;z-index:2;width:100%;display:flex;align-items:flex-end;padding-block:0 3.5rem}
+.ouv-txt{background:rgba(10,10,9,.92);padding:2.6rem 2.4rem 2.2rem;max-width:min(46rem,62%);
+  border-left:6px solid var(--ambre-photo)}
+@media(max-width:820px){.ouv-txt{max-width:none;padding:2rem 1.5rem 1.8rem}}
+.ouv-txt .etiq{color:var(--ambre-photo)}
+.ouverture h1{font-size:clamp(2.1rem,4.6vw,3.6rem);color:#F2F1EE;max-width:15ch;margin-top:.9rem}
+.ouverture h1 span{color:var(--ambre-photo)}
+.ouv-sous{color:#D6D3CC;margin-top:1.1rem;max-width:52ch;font-size:.97rem}
+.ouv-action{display:inline-block;margin-top:1.6rem;font-size:.7rem;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;background:var(--ambre-photo);color:#12120F;text-decoration:none;padding:.95rem 1.7rem}
+.ouv-action:hover{background:#F2F1EE}
+.ouv-pied{display:flex;flex-wrap:wrap;gap:.4rem 2.4rem;margin-top:2rem;padding-top:1.2rem;
+  border-top:1px solid rgba(242,241,238,.3);font-size:.82rem;color:#CFCCC5}
+.ouv-pied b{color:#F2F1EE;font-weight:700}
+@media(max-width:700px){.ouverture{min-height:86svh}.ouv-txt{padding-block:3.5rem 3rem}}
 
 .sect{padding-block:4.5rem}
 h2{font-size:clamp(1.7rem,3.6vw,2.7rem);margin-top:.7rem}
@@ -189,7 +198,7 @@ h2{font-size:clamp(1.7rem,3.6vw,2.7rem);margin-top:.7rem}
 /* --- contact sur photo --- */
 .contact{position:relative;overflow:hidden}
 .contact > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.c-voile{position:relative;z-index:2;background:rgba(10,10,9,.84);padding-block:5rem}
+.c-voile{position:relative;z-index:2;background:rgba(10,10,9,.92);padding-block:5rem}
 .contact .env{text-align:center}
 .contact .etiq{color:var(--ambre-photo)}
 .c-tel{display:inline-block;font-family:'Archivo Black',sans-serif;font-size:clamp(2.1rem,5vw,3.4rem);
@@ -206,8 +215,8 @@ footer{background:var(--fond);color:var(--acier);font-size:.76rem;padding-block:
 footer a{color:var(--encre)}
 
 .b-theme{display:inline-flex;align-items:center;justify-content:center;width:2rem;height:2rem;padding:0;
-  flex-shrink:0;cursor:pointer;background:none;color:var(--sur-noir);border:1px solid currentColor;border-radius:99px;opacity:.65}
-.b-theme:hover{opacity:1}
+  flex-shrink:0;cursor:pointer;background:none;color:#CFCCC5;border:1px solid currentColor;border-radius:99px;opacity:.85}
+.b-theme:hover{opacity:1;color:#F2F1EE}
 
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
@@ -216,36 +225,42 @@ footer a{color:var(--encre)}
 
 <div class="demo"><b>Exemple</b> — site de démonstration réalisé par NovaSpot · <a href="https://novaspot.fr" target="_blank" rel="noopener">novaspot.fr</a></div>
 
-<nav class="barre" aria-label="Accès rapide">
-  <div class="env b-in">
-    <a class="b-marque" href="#haut">Garage <span>Viallard</span></a>
-    <div class="b-liens">
-      <a href="#forfaits">Forfaits</a>
-      <a href="#pieces">Les pièces</a>
-      <a href="#deroule">Déroulé</a>
-      <a href="#avis">Avis</a>
-    </div>
-    <button class="b-theme" type="button" aria-label="Passer en thème sombre"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"></svg></button>
-    <a class="b-tel" href="tel:+33557000001"><span class="b-long">05 57 00 00 01</span><span class="b-court">Appeler</span></a>
-  </div>
-</nav>
-
-<header class="panneau" id="haut">
+<div class="service">
   <div class="env">
-    <span class="etiq">Mécanique · Carrosserie · Pneus · Saint-Savin</span>
-    <h1>On vous appelle <span>avant</span> de réparer.</h1>
-    <p class="pan-sous">Jamais une facture plus élevée que le devis sans que vous ayez dit oui au téléphone. C'est la règle de la maison depuis 2011.</p>
-    <div class="pan-pied">
-      <span><b>12 route de Bordeaux</b>, Saint-Savin</span>
-      <span>Toutes marques, essence, diesel et hybride</span>
-      <span><b>4,7</b> ★★★★★ · 81 avis</span>
+    <span>12 route de Bordeaux, 33920 Saint-Savin</span>
+    <span class="droite"><b>05 57 00 00 01</b> · lundi au vendredi 8 h – 18 h, samedi 8 h – 12 h</span>
+  </div>
+</div>
+
+<header class="ouverture" id="haut">
+  <img src="/img/g-atelier.jpg" alt="L'atelier et ses ponts élévateurs" width="1500" height="2026" fetchpriority="high"/>
+  <nav class="barre" aria-label="Accès rapide">
+    <div class="env b-in">
+      <a class="b-marque" href="#haut">Garage <span>Viallard</span></a>
+      <div class="b-liens">
+        <a href="#forfaits">Forfaits</a>
+        <a href="#pieces">Les pièces</a>
+        <a href="#deroule">Déroulé</a>
+        <a href="#avis">Avis</a>
+      </div>
+      <button class="b-theme" type="button" aria-label="Passer en thème sombre"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"></svg></button>
+      <a class="b-tel" href="tel:+33557000001"><span class="b-long">05 57 00 00 01</span><span class="b-court">Appeler</span></a>
+    </div>
+  </nav>
+  <div class="env">
+    <div class="ouv-txt">
+      <div class="etiq">Mécanique · Carrosserie · Pneus · Saint-Savin</div>
+      <h1>On vous appelle <span>avant</span> de réparer.</h1>
+      <p class="ouv-sous">Jamais une facture plus élevée que le devis sans que vous ayez dit oui au téléphone. C'est la règle de la maison depuis 2011.</p>
+      <a class="ouv-action" href="#contact">Prendre rendez-vous</a>
+      <div class="ouv-pied">
+        <span><b>12 route de Bordeaux</b>, Saint-Savin</span>
+        <span>Toutes marques, essence, diesel et hybride</span>
+        <span><b>4,7</b> ★★★★★ · 81 avis</span>
+      </div>
     </div>
   </div>
 </header>
-
-<figure class="atelier-bande">
-  <img src="/img/g-atelier.jpg" alt="L'atelier et ses ponts élévateurs" width="1500" height="2026" fetchpriority="high"/>
-</figure>
 
 <section class="sect" id="forfaits">
   <div class="env">

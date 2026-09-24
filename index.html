@@ -8,259 +8,246 @@
 <meta name="robots" content="noindex,nofollow"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Chivo:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <script>try{var t=localStorage.getItem("ns-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <style>
 /* ---------------------------------------------------------------
-   Une grille dense de modules separes par des filets d'un pixel,
-   comme une planche de catalogue de pieces. Rien n'est arrondi,
-   rien ne flotte : tout est cale sur douze colonnes.
+   Registre releve sur les garages les mieux notes (Otto Haus :
+   694 mots, 49 % d'image, noir / blanc / accent chaud, titrage
+   ultra-gras). Un garage assume le contraste : de l'atelier en
+   grand, des prix lisibles de loin, rien de delicat.
    --------------------------------------------------------------- */
 :root{
-  --acier:#E5E6E3;
-  --tole:#F4F5F3;
-  --cambouis:#181A18;
-  --cambouis-doux:#3A3D3A;
-  --fonte:#5B5F5B;
-  --trait:#CBCDC8;
-  --signal:#8A5D00;
-  --signal-vif:#A97400;
-  --sur-noir:#EDEEEB;
-  --sur-noir-doux:#9CA09B;
-  --sur-noir-accent:#E0A93B;
-  --focus:#8A5D00;
+  --fond:#F2F1EE;
+  --fond2:#E6E4DF;
+  --noir:#0E0E0D;
+  --noir2:#1A1A18;
+  --encre:#12120F;
+  --encre-doux:#46453F;
+  --acier:#6A6862;
+  --trait:#D2CFC8;
+  --ambre:#8F4A0B;        /* sur le fond de page, qui bascule */
+  --ambre-photo:#F0A85C;  /* sur un voile pose sur photo : fige dans les deux themes */
+  --ambre-inv:#F0A85C;    /* sur la bande qui s'inverse avec le theme */
+  --sur-noir:#F2F1EE;
+  --sur-noir-doux:#A9A69F;
+  --sur-ambre:#12120F;
+  --voile:rgba(10,10,9,.74);
+  --focus:#B25E12;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --acier:#181A18;
-    --tole:#202320;
-    --cambouis:#EDEEEB;
-    --cambouis-doux:#CDD0CC;
-    --fonte:#9CA09B;
-    --trait:#31352F;
-    --signal:#E0A93B;
-    --signal-vif:#EFBF5E;
-    --sur-noir:#202320;
-    --sur-noir-doux:#4A4F49;
-    --sur-noir-accent:#6E4A00;
-    --focus:#E0A93B;
+    --fond:#101010;
+    --fond2:#181817;
+    --noir:#F2F1EE;
+    --noir2:#E2E0DA;
+    --encre:#F4F3EF;
+    --encre-doux:#C7C4BC;
+    --acier:#928F87;
+    --trait:#2C2B28;
+    --ambre:#E39445;
+    --ambre-photo:#F0A85C;
+    --ambre-inv:#8F4A0B;
+    --sur-noir:#141413;
+    --sur-noir-doux:#57554F;
+    --sur-ambre:#141413;
+    --focus:#F0A85C;
   }
 }
 :root[data-theme="dark"]{
-  --acier:#181A18;
-  --tole:#202320;
-  --cambouis:#EDEEEB;
-  --cambouis-doux:#CDD0CC;
-  --fonte:#9CA09B;
-  --trait:#31352F;
-  --signal:#E0A93B;
-  --signal-vif:#EFBF5E;
-  --sur-noir:#202320;
-  --sur-noir-doux:#4A4F49;
-  --sur-noir-accent:#6E4A00;
-  --focus:#E0A93B;
+  --fond:#101010;
+  --fond2:#181817;
+  --noir:#F2F1EE;
+  --noir2:#E2E0DA;
+  --encre:#F4F3EF;
+  --encre-doux:#C7C4BC;
+  --acier:#928F87;
+  --trait:#2C2B28;
+  --ambre:#E39445;
+  --ambre-photo:#F0A85C;
+  --ambre-inv:#8F4A0B;
+  --sur-noir:#141413;
+  --sur-noir-doux:#57554F;
+  --sur-ambre:#141413;
+  --focus:#F0A85C;
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:3.6rem}
-body{background:var(--acier);color:var(--cambouis-doux);font-family:'Chivo',system-ui,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
-h1,h2,h3{font-family:'Saira Condensed',system-ui,sans-serif;color:var(--cambouis);font-weight:700;letter-spacing:.005em;text-transform:uppercase}
-.mono{font-family:'Roboto Mono',monospace;font-variant-numeric:tabular-nums}
-a{color:var(--signal)}
+html{scroll-behavior:smooth;scroll-padding-top:4rem}
+body{background:var(--fond);color:var(--encre-doux);font-family:'Archivo',system-ui,sans-serif;
+  font-size:15px;line-height:1.58;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.noire{font-family:'Archivo Black','Archivo',sans-serif;color:var(--encre);
+  font-weight:400;letter-spacing:-.02em;text-transform:uppercase;line-height:1}
+a{color:var(--encre)}
 :focus-visible{outline:2px solid var(--focus);outline-offset:2px}
 img{max-width:100%;display:block}
-.env{max-width:1180px;margin:0 auto;padding-inline:1.4rem}
+.env{max-width:1280px;margin:0 auto;padding-inline:1.8rem}
+.etiq{font-size:.66rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--ambre)}
 
-.demo{background:var(--cambouis);color:var(--sur-noir);padding:.5rem 1rem;text-align:center;font-size:.74rem}
-.demo a{color:var(--sur-noir-accent);font-weight:700}
+.demo{background:var(--noir);color:var(--sur-noir);padding:.5rem 1rem;text-align:center;font-size:.72rem}
+.demo a{color:var(--sur-noir);font-weight:700}
 .demo b{color:var(--sur-noir)}
 
-.barre{position:sticky;top:0;z-index:20;background:var(--acier);border-bottom:1px solid var(--trait)}
-.b-in{display:flex;align-items:center;gap:1.4rem;min-height:3.05rem}
-.b-marque{font-family:'Saira Condensed',sans-serif;font-weight:700;font-size:1.22rem;text-transform:uppercase;letter-spacing:.03em;color:var(--cambouis);text-decoration:none;flex-shrink:0}
-.b-liens{display:flex;gap:1.3rem;margin-left:auto}
-.b-liens a{font-family:'Roboto Mono',monospace;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--cambouis-doux);text-decoration:none;padding-block:.2rem;border-bottom:2px solid transparent}
-.b-liens a:hover{color:var(--cambouis);border-bottom-color:var(--signal)}
-.b-tel{font-family:'Saira Condensed',sans-serif;font-size:.98rem;font-weight:700;letter-spacing:.03em;background:var(--signal);color:var(--tole);text-decoration:none;padding:.4rem 1rem;flex-shrink:0;white-space:nowrap}
-.b-tel:hover{background:var(--cambouis)}
+/* --- barre pleine largeur, posee sur la photo --- */
+.barre{position:absolute;top:0;left:0;right:0;z-index:20;background:rgba(10,10,9,.78);padding-block:.9rem}
+.b-in{display:flex;align-items:center;gap:1.5rem;min-height:2.6rem}
+.b-marque{font-family:'Archivo Black',sans-serif;font-size:1.32rem;text-transform:uppercase;letter-spacing:-.02em;
+  color:#F2F1EE;text-decoration:none;line-height:1;flex-shrink:0}
+.b-marque span{color:var(--ambre-photo)}
+.b-liens{display:flex;gap:1.6rem;margin-left:auto}
+.b-liens a{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#CFCCC5;
+  text-decoration:none;padding-block:.3rem;border-bottom:2px solid transparent}
+.b-liens a:hover{color:#F2F1EE;border-bottom-color:var(--ambre-photo)}
+.b-tel{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:var(--ambre-photo);
+  color:#12120F;text-decoration:none;padding:.8rem 1.3rem;white-space:nowrap}
+.b-tel:hover{background:#F2F1EE}
 .b-court{display:none}
-@media(max-width:900px){.b-liens{display:none}.b-long{display:none}.b-court{display:inline}}
+@media(max-width:940px){.b-liens{display:none}.b-long{display:none}.b-court{display:inline}}
+@media(max-width:520px){.env{padding-inline:1.2rem}.b-in{gap:.7rem}.b-marque{font-size:1.1rem}.b-tel{padding:.7rem 1rem}}
 
-/* --- grille d'ouverture, douze colonnes --- */
-.planche{display:grid;grid-template-columns:repeat(12,1fr);gap:1px;background:var(--trait);
-  border-bottom:1px solid var(--trait)}
-.case{background:var(--acier);padding:1.5rem 1.4rem;min-width:0}
-.case.photo{padding:0}
-.case.photo img{width:100%;height:clamp(140px,13vw,168px);object-fit:cover}
-.c-vue img{height:clamp(190px,17vw,218px)}
-.c-titre{grid-column:span 7;grid-row:span 2;display:flex;flex-direction:column;justify-content:center;padding:2.4rem 2rem}
-.c-vue{grid-column:span 5}
-.c-serre{grid-column:span 5}
-.c-ident{grid-column:span 4;display:flex;align-items:center}
-.c-dessous{grid-column:span 4}
-.c-outils{grid-column:span 4}
-.titre{font-size:clamp(2.1rem,5vw,3.6rem);line-height:.98}
-.titre span{color:var(--signal)}
-.accroche{margin-top:.9rem;max-width:46ch;font-size:1rem}
-.ident{font-family:'Roboto Mono',monospace;font-size:.76rem;line-height:1.9;letter-spacing:.03em;color:var(--fonte)}
-.ident b{color:var(--cambouis);font-weight:500}
-@media(max-width:900px){
-  .c-titre{grid-column:span 12;grid-row:auto;padding:1.8rem 1.4rem}
-  .c-vue,.c-serre,.c-ident{grid-column:span 12}
-  .c-dessous,.c-outils{grid-column:span 6}
-  .case.photo img,.c-vue img{height:clamp(150px,34vw,200px)}
-}
+/* --- ouverture : l'atelier en grand --- */
+.ouverture{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
+.ouverture > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%}
+.ouv-txt{position:relative;z-index:2;width:100%;padding-block:5rem 4.5rem;
+  background:linear-gradient(to top,rgba(10,10,9,.90),rgba(10,10,9,.72))}
+.ouv-txt .etiq{color:var(--ambre-photo)}
+.ouverture h1{font-size:clamp(2.3rem,6.2vw,5rem);color:#F2F1EE;max-width:16ch;margin-top:1rem}
+.ouverture h1 span{color:var(--ambre-photo)}
+.ouv-sous{color:#D6D3CC;margin-top:1.3rem;max-width:52ch;font-size:1rem}
+.ouv-pied{display:flex;flex-wrap:wrap;gap:.4rem 2.4rem;margin-top:2rem;padding-top:1.2rem;
+  border-top:1px solid rgba(242,241,238,.3);font-size:.82rem;color:#CFCCC5}
+.ouv-pied b{color:#F2F1EE;font-weight:700}
+@media(max-width:700px){.ouverture{min-height:86svh}.ouv-txt{padding-block:3.5rem 3rem}}
 
-/* --- ce qu'on refuse --- */
-.refus{background:var(--tole);border-bottom:1px solid var(--trait)}
-.refus .env{padding-block:2.2rem;display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:2.4rem;align-items:baseline}
-.refus h2{font-size:clamp(1.4rem,3vw,2rem);line-height:1.05}
-.refus p{font-size:.97rem}
-@media(max-width:820px){.refus .env{grid-template-columns:1fr;gap:.8rem}}
+.sect{padding-block:4.5rem}
+h2{font-size:clamp(1.7rem,3.6vw,2.7rem);margin-top:.7rem}
+.intro{margin-top:.9rem;max-width:58ch;font-size:.97rem}
 
-/* --- forfaits en grille dense --- */
-.section{padding-block:2.6rem}
-.tete{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem 1.4rem}
-.etiq{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--signal)}
-h2{font-size:clamp(1.4rem,3vw,2rem);line-height:1.05}
-.sous{margin-top:.5rem;max-width:56ch;font-size:.96rem}
+/* --- les forfaits : prix lisibles de loin --- */
+.forfaits{margin-top:2.4rem;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;
+  background:var(--trait);border:1px solid var(--trait)}
+.forfait{background:var(--fond);padding:1.7rem 1.4rem;display:flex;flex-direction:column}
+.f-prix{font-family:'Archivo Black',sans-serif;font-size:2.1rem;color:var(--ambre);line-height:.95;letter-spacing:-.02em}
+.f-nom{font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--encre);margin-top:.7rem}
+.f-inclus{font-size:.9rem;margin-top:.9rem;padding-top:.8rem;border-top:1px solid var(--trait)}
+.f-hors{font-size:.85rem;margin-top:.8rem;padding-left:1.1rem;position:relative;color:var(--acier)}
+.f-hors::before{content:'—';position:absolute;left:0;color:var(--ambre)}
+@media(max-width:880px){.forfaits{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.forfaits{grid-template-columns:1fr}}
 
-.forfaits{margin-top:1.6rem;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--trait);border:1px solid var(--trait)}
-.forfait{background:var(--acier);padding:1.25rem 1.2rem;display:flex;flex-direction:column}
-.f-prix{font-family:'Saira Condensed',sans-serif;font-size:1.75rem;font-weight:700;color:var(--cambouis);line-height:1}
-.f-nom{font-family:'Roboto Mono',monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--signal);margin-top:.4rem}
-.f-inclus{font-size:.9rem;margin-top:.8rem;padding-top:.7rem;border-top:1px solid var(--trait)}
-.f-hors{font-size:.85rem;margin-top:.75rem;padding-left:1.1rem;position:relative;color:var(--fonte)}
-.f-hors::before{content:'—';position:absolute;left:0;color:var(--signal)}
-@media(max-width:860px){.forfaits{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:540px){.forfaits{grid-template-columns:1fr}}
+/* --- bande photo pleine largeur --- */
+.bande{position:relative;overflow:hidden}
+.bande img{width:100%;height:clamp(240px,34vw,440px);object-fit:cover}
+.bande .lgd{position:absolute;left:0;bottom:0;background:var(--noir);color:var(--sur-noir);
+  font-size:.74rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.7rem 1.3rem}
+@media(max-width:620px){.bande .lgd{position:static}}
 
-/* --- origine / adaptable --- */
-.pieces{border-top:1px solid var(--trait);padding-block:2.6rem;background:var(--tole)}
-.choix{margin-top:1.6rem;display:grid;grid-template-columns:minmax(0,4fr) minmax(0,4fr) minmax(0,3fr);gap:1px;background:var(--trait);border:1px solid var(--trait)}
-.opt{background:var(--tole);padding:1.3rem 1.2rem}
-.opt h3{font-size:1.3rem;line-height:1}
-.opt .cote{font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;color:var(--signal);margin-top:.3rem}
-.opt p{font-size:.9rem;margin-top:.75rem}
-.opt.photo{padding:0}
-.opt.photo img{width:100%;height:100%;object-fit:cover}
-.ecart{margin-top:1.2rem;border-left:3px solid var(--signal);padding:.85rem 1.1rem;background:var(--acier);font-size:.94rem;max-width:74ch}
-@media(max-width:860px){.choix{grid-template-columns:1fr 1fr}.opt.photo{grid-column:span 2}.opt.photo img{height:clamp(160px,30vw,220px)}}
-@media(max-width:540px){.choix{grid-template-columns:1fr}.opt.photo{grid-column:auto}}
+/* --- pieces : deux colonnes plus une photo --- */
+.pieces{background:var(--fond2);border-block:1px solid var(--trait);padding-block:4.5rem}
+.p-grille{margin-top:2.2rem;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,.75fr);gap:2.6rem;align-items:start}
+.opt h3{font-size:1.25rem}
+.opt .cote{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ambre);margin-top:.5rem}
+.opt p{font-size:.93rem;margin-top:.8rem}
+.p-photo img{width:100%;height:auto;aspect-ratio:2/3;object-fit:cover}
+.ecart{margin-top:1.8rem;border-left:4px solid var(--ambre);padding:1rem 1.2rem;background:var(--fond);font-size:.95rem;max-width:76ch}
+@media(max-width:900px){.p-grille{grid-template-columns:1fr 1fr}.p-photo{grid-column:span 2;max-width:340px}}
+@media(max-width:600px){.p-grille{grid-template-columns:1fr}.p-photo{grid-column:auto}}
 
-/* --- bande atelier --- */
-.atelier{position:relative;background:var(--cambouis)}
-.atelier img{width:100%;height:clamp(200px,27vw,330px);object-fit:cover}
-.atelier figcaption{position:absolute;left:0;bottom:0;background:var(--cambouis);color:var(--sur-noir);
-  font-family:'Roboto Mono',monospace;font-size:.76rem;padding:.65rem 1.1rem;max-width:34rem;line-height:1.5}
-@media(max-width:620px){.atelier figcaption{position:static;max-width:none}}
-
-/* --- deroule sur une seule rangee --- */
-.deroule{padding-block:2.6rem}
-.etapes{margin-top:1.6rem;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--trait);border-top:2px solid var(--cambouis)}
-.etape{background:var(--acier);padding:1.2rem 1.15rem}
-.e-num{font-family:'Roboto Mono',monospace;font-size:.72rem;letter-spacing:.1em;color:var(--signal)}
-.e-titre{font-family:'Saira Condensed',sans-serif;font-size:1.3rem;font-weight:700;text-transform:uppercase;color:var(--cambouis);margin-top:.3rem;line-height:1}
-.e-txt{font-size:.89rem;margin-top:.55rem}
+/* --- deroule --- */
+.etapes{margin-top:2.2rem;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--trait);border-top:3px solid var(--encre)}
+.etape{background:var(--fond);padding:1.4rem 1.2rem}
+.e-num{font-family:'Archivo Black',sans-serif;font-size:1.5rem;color:var(--ambre);line-height:1}
+.e-titre{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--encre);margin-top:.6rem}
+.e-txt{font-size:.9rem;margin-top:.5rem}
 @media(max-width:900px){.etapes{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.etapes{grid-template-columns:1fr}}
 
+/* --- les avis : destination du QR code imprime --- */
+.avis{background:var(--noir);color:var(--sur-noir-doux);padding-block:4.5rem}
+.avis .env{display:grid;grid-template-columns:auto minmax(0,1fr);gap:3.5rem;align-items:center}
+.avis h2{color:var(--sur-noir)}
+.avis .etiq{color:var(--ambre-inv)}
+.note b{display:block;font-family:'Archivo Black',sans-serif;font-size:4rem;color:var(--sur-noir);line-height:.85}
+.note .et{color:var(--ambre-inv);letter-spacing:.16em;font-size:1rem;margin-top:.5rem}
+.note span{display:block;font-size:.66rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--sur-noir-doux);margin-top:.5rem}
+.avis p{margin-top:.8rem;max-width:58ch;font-size:.95rem}
+.chemins{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.6rem}
+.chemin{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;
+  padding:.9rem 1.4rem;border:1px solid var(--sur-noir);color:var(--sur-noir)}
+.chemin.plein{background:var(--ambre-inv);border-color:var(--ambre-inv);color:var(--noir)}
+.chemin:hover{opacity:.82}
+@media(max-width:760px){.avis .env{grid-template-columns:1fr;gap:1.8rem}}
+
 /* --- questions --- */
-.questions{border-top:1px solid var(--trait);padding-block:2.6rem;background:var(--tole)}
-.qgrille{margin-top:1.4rem;display:grid;grid-template-columns:1fr 1fr;gap:1.4rem 2.8rem}
-.qa dt{font-family:'Saira Condensed',sans-serif;font-size:1.18rem;font-weight:700;text-transform:uppercase;color:var(--cambouis)}
-.qa dd{margin-top:.25rem;font-size:.93rem}
-@media(max-width:760px){.qgrille{grid-template-columns:1fr;gap:1.2rem}}
+.qgrille{margin-top:2rem;display:grid;grid-template-columns:1fr 1fr;gap:1.8rem 3.2rem}
+.qa dt{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--encre)}
+.qa dd{margin-top:.4rem;font-size:.93rem}
+@media(max-width:760px){.qgrille{grid-template-columns:1fr;gap:1.4rem}}
 
-/* --- bande finale --- */
-.finale{background:var(--cambouis);color:var(--sur-noir);padding-block:2.8rem}
-.finale h2,.finale .c-tel{color:var(--sur-noir)}
-.finale .etiq{color:var(--sur-noir-accent)}
-.f-grille{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,1fr);gap:2.6rem;align-items:start}
-.note b{font-family:'Saira Condensed',sans-serif;font-size:3.4rem;font-weight:700;color:var(--sur-noir);line-height:.82;display:block}
-.note .et{color:var(--sur-noir-accent);letter-spacing:.14em;margin-top:.35rem}
-.note span{display:block;font-family:'Roboto Mono',monospace;font-size:.68rem;color:var(--sur-noir-doux);margin-top:.4rem}
-.c-tel{font-family:'Saira Condensed',sans-serif;font-size:2rem;font-weight:700;text-decoration:none;line-height:1;display:inline-block;margin-top:.45rem}
-.c-tel:hover{color:var(--sur-noir-accent)}
-.c-note{margin-top:.6rem;color:var(--sur-noir-doux);font-size:.92rem;max-width:36ch}
-.horaires{font-family:'Roboto Mono',monospace;font-size:.8rem;color:var(--sur-noir-doux)}
-.horaires div{display:flex;justify-content:space-between;gap:1rem;padding-block:.3rem;border-bottom:1px solid var(--sur-noir-doux)}
-.horaires div:last-child{border-bottom:0}
-.horaires b{color:var(--sur-noir);font-weight:500}
-@media(max-width:900px){.f-grille{grid-template-columns:1fr;gap:1.7rem}}
+/* --- contact sur photo --- */
+.contact{position:relative;overflow:hidden}
+.contact > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.c-voile{position:relative;z-index:2;background:rgba(10,10,9,.84);padding-block:5rem}
+.contact .env{text-align:center}
+.contact .etiq{color:var(--ambre-photo)}
+.c-tel{display:inline-block;font-family:'Archivo Black',sans-serif;font-size:clamp(2.1rem,5vw,3.4rem);
+  color:#F2F1EE;text-decoration:none;margin-top:.9rem;line-height:1;letter-spacing:-.02em}
+.c-tel:hover{color:var(--ambre-photo)}
+.c-note{color:#CFCCC5;font-size:.95rem;margin-top:1rem;max-width:46ch;margin-inline:auto}
+.horaires{margin-top:2.4rem;padding-top:1.4rem;border-top:1px solid rgba(242,241,238,.3);
+  display:grid;grid-template-columns:repeat(4,auto);gap:1.2rem 2.6rem;justify-content:center;font-size:.84rem;color:#CFCCC5}
+.horaires b{display:block;font-size:.64rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ambre-photo);margin-bottom:.2rem}
+.horaires span{color:#F2F1EE}
+@media(max-width:700px){.horaires{grid-template-columns:1fr 1fr}}
 
-footer{background:var(--cambouis);color:var(--sur-noir-doux);font-size:.76rem;padding-block:1.4rem 2rem;border-top:1px solid var(--sur-noir-doux)}
-footer a{color:var(--sur-noir-accent)}
+footer{background:var(--fond);color:var(--acier);font-size:.76rem;padding-block:2rem 2.4rem;text-align:center}
+footer a{color:var(--encre)}
 
-@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+.b-theme{display:inline-flex;align-items:center;justify-content:center;width:2rem;height:2rem;padding:0;
+  flex-shrink:0;cursor:pointer;background:none;color:#CFCCC5;border:1px solid currentColor;border-radius:99px;opacity:.85}
+.b-theme:hover{opacity:1;color:#F2F1EE}
 
-/* --- bascule clair / sombre --- */
-.b-theme{display:inline-flex;align-items:center;justify-content:center;
-  width:2rem;height:2rem;padding:0;flex-shrink:0;cursor:pointer;
-  background:none;color:inherit;border:1px solid currentColor;border-radius:99px;opacity:.55}
-.b-theme:hover{opacity:1}
-@media(max-width:900px){.b-theme{margin-left:auto}.b-theme + .b-tel{margin-left:.5rem}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
 
 <div class="demo"><b>Exemple</b> — site de démonstration réalisé par NovaSpot · <a href="https://novaspot.fr" target="_blank" rel="noopener">novaspot.fr</a></div>
 
-<nav class="barre" aria-label="Accès rapide">
-  <div class="env b-in">
-    <a class="b-marque" href="#haut">Garage Viallard</a>
-    <div class="b-liens">
-      <a href="#forfaits">Forfaits</a>
-      <a href="#pieces">Les pièces</a>
-      <a href="#deroule">Déroulé</a>
-      <a href="#questions">Questions</a>
+<header class="ouverture" id="haut">
+  <img src="/img/g-atelier.jpg" alt="L'atelier et ses ponts élévateurs" width="1500" height="2026" fetchpriority="high"/>
+  <nav class="barre" aria-label="Accès rapide">
+    <div class="env b-in">
+      <a class="b-marque" href="#haut">Garage <span>Viallard</span></a>
+      <div class="b-liens">
+        <a href="#forfaits">Forfaits</a>
+        <a href="#pieces">Les pièces</a>
+        <a href="#deroule">Déroulé</a>
+        <a href="#avis">Avis</a>
+      </div>
+      <button class="b-theme" type="button" aria-label="Passer en thème sombre"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"></svg></button>
+      <a class="b-tel" href="tel:+33557000001"><span class="b-long">05 57 00 00 01</span><span class="b-court">Appeler</span></a>
     </div>
-    <button class="b-theme" type="button" aria-label="Passer en thème sombre"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"></svg></button>
-    <a class="b-tel" href="tel:+33557000001"><span class="b-long">05 57 00 00 01</span><span class="b-court">Appeler</span></a>
-  </div>
-</nav>
-
-<div class="planche" id="haut">
-  <div class="case c-titre">
-    <h1 class="titre">On vous appelle <span>avant</span> de réparer.</h1>
-    <p class="accroche">Jamais une facture plus élevée que le devis sans que vous ayez dit oui au téléphone. C'est la règle de la maison depuis 2011.</p>
-  </div>
-  <div class="case photo c-vue">
-    <img src="/img/unsplash-photo-1615906655593-ad0386982a0f.jpg" alt="Mécanicien au travail sur un moteur"/>
-  </div>
-  <div class="case photo c-serre">
-    <img src="/img/unsplash-photo-1619642751034-765dfdf7c58e.jpg" alt="Serrage d'un écrou à la clé"/>
-  </div>
-  <div class="case c-ident">
-    <div class="ident">
-      <b>Garage Viallard</b><br/>
-      12 route de Bordeaux, Saint-Savin<br/>
-      Mécanique · Carrosserie · Pneus<br/>
-      Essence, diesel et hybride
+  </nav>
+  <div class="ouv-txt">
+    <div class="env">
+      <div class="etiq">Mécanique · Carrosserie · Pneus · Saint-Savin</div>
+      <h1>On vous appelle <span>avant</span> de réparer.</h1>
+      <p class="ouv-sous">Jamais une facture plus élevée que le devis sans que vous ayez dit oui au téléphone. C'est la règle de la maison depuis 2011.</p>
+      <div class="ouv-pied">
+        <span><b>12 route de Bordeaux</b>, Saint-Savin</span>
+        <span>Toutes marques, essence, diesel et hybride</span>
+        <span><b>4,7</b> ★★★★★ · 81 avis</span>
+      </div>
     </div>
   </div>
-  <div class="case photo c-dessous">
-    <img src="/img/unsplash-photo-1702146713858-8e7d1cc29fe8.jpg" alt="Intervention sous un véhicule"/>
-  </div>
-  <div class="case photo c-outils">
-    <img src="/img/unsplash-photo-1637640125496-31852f042a60.jpg" alt="Outillage d'atelier"/>
-  </div>
-</div>
+</header>
 
-<section class="refus">
+<section class="sect" id="forfaits">
   <div class="env">
-    <h2>Toutes marques. Y compris la vôtre.</h2>
-    <p>Les seules choses qu'on refuse : les véhicules électriques, faute d'habilitation haute tension, et les boîtes automatiques à démonter, qu'on envoie chez un spécialiste à Saint-André. On vous le dit au téléphone, pas après avoir gardé la voiture trois jours.</p>
-  </div>
-</section>
-
-<section class="section" id="forfaits">
-  <div class="env">
-    <div class="tete">
-      <span class="etiq">Tarifs affichés</span>
-      <h2>Les forfaits, et ce qu'ils ne comprennent pas</h2>
-    </div>
-    <p class="sous">Un prix seul ne veut rien dire tant qu'on ne sait pas ce qu'il y a dedans. Voilà les deux.</p>
+    <div class="etiq">Tarifs affichés</div>
+    <h2>Les forfaits, et ce qu'ils ne comprennent pas</h2>
+    <p class="intro">Un prix seul ne veut rien dire tant qu'on ne sait pas ce qu'il y a dedans. Voilà les deux.</p>
 
     <div class="forfaits">
       <div class="forfait">
@@ -303,15 +290,18 @@ footer a{color:var(--sur-noir-accent)}
   </div>
 </section>
 
+<figure class="bande">
+  <img src="/img/g-capot.jpg" alt="Intervention sous le capot" width="1400" height="933" loading="lazy" decoding="async"/>
+  <figcaption class="lgd">Deux ponts — un pour les entretiens, un pour les réparations longues</figcaption>
+</figure>
+
 <section class="pieces" id="pieces">
   <div class="env">
-    <div class="tete">
-      <span class="etiq">Le choix qu'on vous laisse</span>
-      <h2>Pièce d'origine ou adaptable</h2>
-    </div>
-    <p class="sous">La plupart des garages choisissent pour vous. Nous, on donne les deux prix et vous tranchez.</p>
+    <div class="etiq">Le choix qu'on vous laisse</div>
+    <h2>Pièce d'origine ou adaptable</h2>
+    <p class="intro">La plupart des garages choisissent pour vous. Nous, on donne les deux prix et vous tranchez.</p>
 
-    <div class="choix">
+    <div class="p-grille">
       <div class="opt">
         <h3>D'origine</h3>
         <div class="cote">Référence constructeur</div>
@@ -322,25 +312,18 @@ footer a{color:var(--sur-noir-accent)}
         <div class="cote">30 à 50 % moins cher</div>
         <p>Fabriquée par un équipementier — souvent le même qui fournit le constructeur, sans le logo. Qualité équivalente sur la plupart des pièces d'usure. On vous dit lesquelles, et surtout lesquelles on déconseille.</p>
       </div>
-      <div class="opt photo">
-        <img src="/img/unsplash-photo-1771340012319-0b4fca008b54.jpg" alt="Intervention sur un moteur en atelier"/>
-      </div>
+      <figure class="p-photo">
+        <img src="/img/g-moteur.jpg" alt="Mécanicien au travail sur un moteur" width="1400" height="2100" loading="lazy" decoding="async"/>
+      </figure>
     </div>
     <p class="ecart">Sur un freinage avant, l'écart est d'environ 60 €. Sur un embrayage, il peut atteindre 300 €. On vous annonce les deux montants au téléphone avant de commander quoi que ce soit.</p>
   </div>
 </section>
 
-<figure class="atelier">
-  <img src="/img/unsplash-photo-1723099971299-3789db53604c.jpg" alt="L'atelier et ses ponts élévateurs"/>
-  <figcaption>L'atelier, route de Bordeaux — deux ponts, un pour les entretiens, un pour les réparations longues.</figcaption>
-</figure>
-
-<section class="deroule" id="deroule">
+<section class="sect" id="deroule">
   <div class="env">
-    <div class="tete">
-      <span class="etiq">Déroulé</span>
-      <h2>Quand vous déposez la voiture</h2>
-    </div>
+    <div class="etiq">Déroulé</div>
+    <h2>Quand vous déposez la voiture</h2>
     <div class="etapes">
       <div class="etape">
         <div class="e-num">01</div>
@@ -366,12 +349,29 @@ footer a{color:var(--sur-noir-accent)}
   </div>
 </section>
 
-<section class="questions" id="questions">
+<section class="avis" id="avis">
   <div class="env">
-    <div class="tete">
-      <span class="etiq">Questions</span>
-      <h2>Ce qu'on nous demande au comptoir</h2>
+    <div class="note">
+      <b>4,7</b>
+      <div class="et">★★★★★</div>
+      <span>81 avis Google</span>
     </div>
+    <div>
+      <div class="etiq">Votre avis</div>
+      <h2>Vous venez de récupérer la voiture ?</h2>
+      <p>Un carton avec un QR code est agrafé à la facture. Il mène ici. Si tout s'est bien passé, deux lignes sur Google aident le prochain à choisir son garage. Si quelque chose n'a pas été, dites-le-nous directement — on préfère le réparer que le lire en ligne.</p>
+      <div class="chemins">
+        <a class="chemin plein" href="https://search.google.com/local/writereview?placeid=PLACE_ID_DU_CLIENT" target="_blank" rel="noopener">Laisser un avis Google</a>
+        <a class="chemin" href="tel:+33557000001">Nous dire ce qui n'a pas été</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sect" id="questions">
+  <div class="env">
+    <div class="etiq">Questions</div>
+    <h2>Ce qu'on nous demande au comptoir</h2>
     <dl class="qgrille">
       <div class="qa">
         <dt>« Vous prêtez une voiture ? »</dt>
@@ -393,25 +393,18 @@ footer a{color:var(--sur-noir-accent)}
   </div>
 </section>
 
-<section class="finale" id="contact">
-  <div class="env">
-    <div class="f-grille">
-      <div class="note">
-        <b>4,7</b>
-        <div class="et">★★★★★</div>
-        <span>81 AVIS GOOGLE</span>
-      </div>
-      <div>
-        <span class="etiq">Contact</span>
-        <a class="c-tel" href="tel:+33557000001">05 57 00 00 01</a>
-        <p class="c-note">On décroche à l'atelier. Si ça sonne dans le vide, c'est qu'on est sous une voiture — rappelez dans dix minutes, ça marche toujours.</p>
-        <p class="c-note">12 route de Bordeaux, 33920 Saint-Savin</p>
-      </div>
+<section class="contact" id="contact">
+  <img src="/img/g-cle.jpg" alt="Serrage à la clé dans l'atelier" width="1400" height="1050" loading="lazy" decoding="async"/>
+  <div class="c-voile">
+    <div class="env">
+      <div class="etiq">Prendre rendez-vous</div>
+      <a class="c-tel" href="tel:+33557000001">05 57 00 00 01</a>
+      <p class="c-note">On décroche à l'atelier. Si ça sonne dans le vide, c'est qu'on est sous une voiture — rappelez dans dix minutes, ça marche toujours.</p>
       <div class="horaires">
         <div><b>Lundi – jeudi</b><span>8 h – 12 h · 14 h – 18 h</span></div>
         <div><b>Vendredi</b><span>8 h – 12 h · 14 h – 17 h</span></div>
         <div><b>Samedi</b><span>8 h – 12 h</span></div>
-        <div><b>Dimanche</b><span>fermé</span></div>
+        <div><b>Dimanche</b><span>Fermé</span></div>
       </div>
     </div>
   </div>
@@ -423,7 +416,6 @@ footer a{color:var(--sur-noir-accent)}
     Site de démonstration réalisé par <a href="https://novaspot.fr" target="_blank" rel="noopener">NovaSpot</a>. Informations fictives.
   </div>
 </footer>
-
 
 <script>
 (function(){

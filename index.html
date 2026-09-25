@@ -74,8 +74,11 @@
 
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:4rem}
+/* Base de lecture : 1rem = 17 px, texte courant a 16 px. Les clients de ces
+   artisans lisent souvent sur telephone, et pas tous avec de bons yeux. */
+html{font-size:106.25%}
 body{background:var(--fond);color:var(--encre-doux);font-family:'Archivo',system-ui,sans-serif;
-  font-size:15px;line-height:1.58;-webkit-font-smoothing:antialiased}
+  font-size:16px;line-height:1.58;-webkit-font-smoothing:antialiased}
 h1,h2,h3,.noire{font-family:'Archivo Black','Archivo',sans-serif;color:var(--encre);
   font-weight:400;letter-spacing:-.02em;text-transform:uppercase;line-height:1}
 a{color:var(--encre)}
@@ -249,7 +252,7 @@ footer a{color:var(--encre)}
   </nav>
 
 <header class="ouverture" id="haut">
-  <img src="/img/g-atelier.jpg" alt="L'atelier et ses ponts élévateurs" width="1500" height="2026" fetchpriority="high"/>
+  <img src="/img/g-atelier.jpg" alt="Voiture sur le pont élévateur, plaque floutée" width="1500" height="2026" fetchpriority="high"/>
   
   <div class="env">
     <div class="ouv-txt">
@@ -314,8 +317,8 @@ footer a{color:var(--encre)}
 </section>
 
 <figure class="bande">
-  <img src="/img/g-capot.jpg" alt="Intervention sous le capot" width="1400" height="933" loading="lazy" decoding="async"/>
-  <figcaption class="lgd">Deux ponts — un pour les entretiens, un pour les réparations longues</figcaption>
+  <img src="/img/g-dessous.jpg" alt="Train avant démonté sur chandelles, amortisseur posé au sol" width="1400" height="933" loading="lazy" decoding="async"/>
+  <figcaption class="lgd">Les pièces changées sont mises de côté — on vous les montre</figcaption>
 </figure>
 
 <section class="pieces" id="pieces">

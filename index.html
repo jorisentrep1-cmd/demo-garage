@@ -133,7 +133,14 @@ img{max-width:100%;display:block}
 .ouv-pied{display:flex;flex-wrap:wrap;gap:.4rem 2.4rem;margin-top:2rem;padding-top:1.2rem;
   border-top:1px solid rgba(242,241,238,.3);font-size:.82rem;color:#CFCCC5}
 .ouv-pied b{color:#F2F1EE;font-weight:700}
-@media(max-width:700px){.ouverture{min-height:86svh}.ouv-txt{padding-block:3.5rem 3rem}}
+/* Sur telephone, la carte couvrait toute la photo : on empile. L'atelier
+   d'abord, bien visible, puis la carte qui mord sur le bas de la photo. */
+@media(max-width:700px){
+  .ouverture{display:block;min-height:0;margin-top:0;padding-top:0;overflow:visible}
+  .ouverture > img{position:static;height:42svh;min-height:15rem;max-height:24rem}
+  .ouverture .env{margin-top:-3rem;padding-block:0}
+  .ouv-txt{padding:1.9rem 1.4rem 1.8rem}
+}
 
 .sect{padding-block:4.5rem}
 h2{font-size:clamp(1.7rem,3.6vw,2.7rem);margin-top:.7rem}
@@ -252,7 +259,7 @@ footer a{color:var(--encre)}
   </nav>
 
 <header class="ouverture" id="haut">
-  <img src="/img/g-atelier-flou.jpg" alt="Voiture sur le pont élévateur, plaque floutée" width="1500" height="2026" fetchpriority="high"/>
+  <img src="/img/g-atelier-flou.jpg" srcset="/img/g-atelier-flou-m.jpg 1000w, /img/g-atelier-flou.jpg 1500w" sizes="(max-width:700px) 330px, 1600px" alt="Voiture sur le pont élévateur, plaque floutée" width="1500" height="2026" fetchpriority="high"/>
   
   <div class="env">
     <div class="ouv-txt">
@@ -310,7 +317,7 @@ footer a{color:var(--encre)}
         <div class="f-prix">39 €</div>
         <div class="f-nom">Pré-contrôle technique</div>
         <p class="f-inclus">Les 133 points du contrôle passés en revue, liste des refus probables.</p>
-        <p class="f-hors">Le contrôle lui-même : on prépare, on ne valide pas</p>
+        <p class="f-hors">Le contrôle lui-même : on prépare, on ne valide pas</p>
       </div>
     </div>
   </div>
@@ -354,12 +361,12 @@ footer a{color:var(--encre)}
       <div class="etape">
         <div class="e-num">01</div>
         <div class="e-titre">Vous déposez</div>
-        <p class="e-txt">Entre 8 h et 9 h. On note ce que vous avez constaté : un bruit, un voyant, une odeur. Dites-le comme vous pouvez.</p>
+        <p class="e-txt">Entre 8 h et 9 h. On note ce que vous avez constaté : un bruit, un voyant, une odeur. Dites-le comme vous pouvez.</p>
       </div>
       <div class="etape">
         <div class="e-num">02</div>
         <div class="e-titre">On vous appelle</div>
-        <p class="e-txt">Avant de démonter quoi que ce soit de payant : ce qu'on a trouvé, le prix des deux options de pièce, le délai. Si on ne vous joint pas, la voiture attend.</p>
+        <p class="e-txt">Avant de démonter quoi que ce soit de payant : ce qu'on a trouvé, le prix des deux options de pièce, le délai. Si on ne vous joint pas, la voiture attend.</p>
       </div>
       <div class="etape">
         <div class="e-num">03</div>
@@ -384,7 +391,7 @@ footer a{color:var(--encre)}
     </div>
     <div>
       <div class="etiq">Votre avis</div>
-      <h2>Vous venez de récupérer la voiture ?</h2>
+      <h2>Vous venez de récupérer la voiture ?</h2>
       <p>Un carton avec un QR code est agrafé à la facture. Il mène ici. Si tout s'est bien passé, deux lignes sur Google aident le prochain à choisir son garage. Si quelque chose n'a pas été, dites-le-nous directement — on préfère le réparer que le lire en ligne.</p>
       <div class="chemins">
         <a class="chemin plein" href="https://search.google.com/local/writereview?placeid=PLACE_ID_DU_CLIENT" target="_blank" rel="noopener">Laisser un avis Google</a>
@@ -400,19 +407,19 @@ footer a{color:var(--encre)}
     <h2>Ce qu'on nous demande au comptoir</h2>
     <dl class="qgrille">
       <div class="qa">
-        <dt>« Vous prêtez une voiture ? »</dt>
-        <dd>Deux véhicules de prêt, gratuits. Ils partent vite : réservez-les en prenant rendez-vous, pas le matin même.</dd>
+        <dt>« Vous prêtez une voiture ? »</dt>
+        <dd>Deux véhicules de prêt, gratuits. Ils partent vite : réservez-les en prenant rendez-vous, pas le matin même.</dd>
       </div>
       <div class="qa">
-        <dt>« Je peux venir avec mes pièces ? »</dt>
+        <dt>« Je peux venir avec mes pièces ? »</dt>
         <dd>Oui, et on ne fait pas la tête. On facture la main-d'œuvre seule, et la garantie ne couvre que notre travail.</dd>
       </div>
       <div class="qa">
-        <dt>« Combien de temps d'attente ? »</dt>
-        <dd>Un entretien, trois à cinq jours. Une panne immobilisante, on essaie de caler dans la journée : on garde un créneau pour ça.</dd>
+        <dt>« Combien de temps d'attente ? »</dt>
+        <dd>Un entretien, trois à cinq jours. Une panne immobilisante, on essaie de caler dans la journée : on garde un créneau pour ça.</dd>
       </div>
       <div class="qa">
-        <dt>« Vous faites le contrôle technique ? »</dt>
+        <dt>« Vous faites le contrôle technique ? »</dt>
         <dd>Non, on n'est pas centre agréé. On fait le pré-contrôle à 39 € et on vous dit ce qui recalera, pour éviter deux passages.</dd>
       </div>
     </dl>

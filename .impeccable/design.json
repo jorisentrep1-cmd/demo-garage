@@ -1,0 +1,496 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-01T00:00:00Z",
+  "title": "Design System: Garage Viallard",
+  "extensions": {
+    "colorMeta": {
+      "fond": {
+        "role": "neutral",
+        "displayName": "Blanc",
+        "canonical": "oklch(100% 0 0)",
+        "dark": "#0D131B",
+        "tonalRamp": [
+          "oklch(15% 0.006 255)",
+          "oklch(25% 0.006 255)",
+          "oklch(35% 0.006 255)",
+          "oklch(45% 0.006 255)",
+          "oklch(55% 0.006 255)",
+          "oklch(70% 0.006 255)",
+          "oklch(85% 0.006 255)",
+          "oklch(95% 0.006 255)"
+        ]
+      },
+      "fond2": {
+        "role": "neutral",
+        "displayName": "Gris acier très clair",
+        "canonical": "oklch(96.9% 0.006 255)",
+        "dark": "#131B26",
+        "tonalRamp": [
+          "oklch(15% 0.006 255)",
+          "oklch(25% 0.006 255)",
+          "oklch(35% 0.006 255)",
+          "oklch(45% 0.006 255)",
+          "oklch(55% 0.006 255)",
+          "oklch(70% 0.006 255)",
+          "oklch(85% 0.006 255)",
+          "oklch(95% 0.006 255)"
+        ]
+      },
+      "carte": {
+        "role": "neutral",
+        "displayName": "Blanc carte",
+        "canonical": "oklch(100% 0 0)",
+        "dark": "#17212E",
+        "tonalRamp": [
+          "oklch(15% 0.006 255)",
+          "oklch(25% 0.006 255)",
+          "oklch(35% 0.006 255)",
+          "oklch(45% 0.006 255)",
+          "oklch(55% 0.006 255)",
+          "oklch(70% 0.006 255)",
+          "oklch(85% 0.006 255)",
+          "oklch(95% 0.006 255)"
+        ]
+      },
+      "trait": {
+        "role": "neutral",
+        "displayName": "Filet acier",
+        "canonical": "oklch(91.3% 0.013 252)",
+        "dark": "#273445",
+        "tonalRamp": [
+          "oklch(15% 0.013 252)",
+          "oklch(25% 0.013 252)",
+          "oklch(35% 0.013 252)",
+          "oklch(45% 0.013 252)",
+          "oklch(55% 0.013 252)",
+          "oklch(70% 0.013 252)",
+          "oklch(85% 0.013 252)",
+          "oklch(95% 0.013 252)"
+        ]
+      },
+      "encre": {
+        "role": "neutral",
+        "displayName": "Encre marine",
+        "canonical": "oklch(22.1% 0.039 258)",
+        "dark": "#F1F4F8",
+        "tonalRamp": [
+          "oklch(15% 0.039 258)",
+          "oklch(25% 0.039 258)",
+          "oklch(35% 0.039 258)",
+          "oklch(45% 0.039 258)",
+          "oklch(55% 0.039 258)",
+          "oklch(70% 0.039 258)",
+          "oklch(85% 0.039 258)",
+          "oklch(95% 0.039 258)"
+        ]
+      },
+      "texte": {
+        "role": "neutral",
+        "displayName": "Ardoise",
+        "canonical": "oklch(37.6% 0.033 257)",
+        "dark": "#C3CCD8",
+        "tonalRamp": [
+          "oklch(15% 0.033 257)",
+          "oklch(25% 0.033 257)",
+          "oklch(35% 0.033 257)",
+          "oklch(45% 0.033 257)",
+          "oklch(55% 0.033 257)",
+          "oklch(70% 0.033 257)",
+          "oklch(85% 0.033 257)",
+          "oklch(95% 0.033 257)"
+        ]
+      },
+      "doux": {
+        "role": "neutral",
+        "displayName": "Ardoise douce",
+        "canonical": "oklch(49.2% 0.031 257)",
+        "dark": "#98A4B5",
+        "tonalRamp": [
+          "oklch(15% 0.031 257)",
+          "oklch(25% 0.031 257)",
+          "oklch(35% 0.031 257)",
+          "oklch(45% 0.031 257)",
+          "oklch(55% 0.031 257)",
+          "oklch(70% 0.031 257)",
+          "oklch(85% 0.031 257)",
+          "oklch(95% 0.031 257)"
+        ]
+      },
+      "marque": {
+        "role": "primary",
+        "displayName": "Bleu Viallard (texte et accent)",
+        "canonical": "oklch(37.3% 0.127 259)",
+        "dark": "#9DC1FA",
+        "tonalRamp": [
+          "oklch(15% 0.127 259)",
+          "oklch(25% 0.127 259)",
+          "oklch(35% 0.127 259)",
+          "oklch(45% 0.127 259)",
+          "oklch(55% 0.127 259)",
+          "oklch(70% 0.127 259)",
+          "oklch(85% 0.127 259)",
+          "oklch(95% 0.127 259)"
+        ]
+      },
+      "bande": {
+        "role": "primary",
+        "displayName": "Bleu Viallard (surface)",
+        "canonical": "oklch(37.3% 0.127 259)",
+        "dark": "#123A72",
+        "tonalRamp": [
+          "oklch(15% 0.127 259)",
+          "oklch(25% 0.127 259)",
+          "oklch(35% 0.127 259)",
+          "oklch(45% 0.127 259)",
+          "oklch(55% 0.127 259)",
+          "oklch(70% 0.127 259)",
+          "oklch(85% 0.127 259)",
+          "oklch(95% 0.127 259)"
+        ]
+      },
+      "sur-bande": {
+        "role": "neutral",
+        "displayName": "Blanc sur bande",
+        "canonical": "oklch(100% 0 0)",
+        "dark": "#FFFFFF",
+        "tonalRamp": [
+          "oklch(15% 0.000 259)",
+          "oklch(25% 0.000 259)",
+          "oklch(35% 0.000 259)",
+          "oklch(45% 0.000 259)",
+          "oklch(55% 0.000 259)",
+          "oklch(70% 0.000 259)",
+          "oklch(85% 0.000 259)",
+          "oklch(95% 0.000 259)"
+        ]
+      },
+      "sur-bande-doux": {
+        "role": "neutral",
+        "displayName": "Bleu clair sur bande",
+        "canonical": "oklch(87% 0.032 260)",
+        "dark": "#C8D5EA",
+        "tonalRamp": [
+          "oklch(15% 0.032 260)",
+          "oklch(25% 0.032 260)",
+          "oklch(35% 0.032 260)",
+          "oklch(45% 0.032 260)",
+          "oklch(55% 0.032 260)",
+          "oklch(70% 0.032 260)",
+          "oklch(85% 0.032 260)",
+          "oklch(95% 0.032 260)"
+        ]
+      },
+      "jaune": {
+        "role": "secondary",
+        "displayName": "Jaune signal",
+        "canonical": "oklch(85.7% 0.165 87)",
+        "dark": "#FFC72C",
+        "tonalRamp": [
+          "oklch(15% 0.160 87)",
+          "oklch(25% 0.165 87)",
+          "oklch(35% 0.165 87)",
+          "oklch(45% 0.165 87)",
+          "oklch(55% 0.165 87)",
+          "oklch(70% 0.165 87)",
+          "oklch(85% 0.165 87)",
+          "oklch(95% 0.160 87)"
+        ]
+      },
+      "jaune-survol": {
+        "role": "secondary",
+        "displayName": "Jaune signal appuyé",
+        "canonical": "oklch(80.9% 0.166 85)",
+        "dark": "#F2B600",
+        "tonalRamp": [
+          "oklch(15% 0.160 85)",
+          "oklch(25% 0.166 85)",
+          "oklch(35% 0.166 85)",
+          "oklch(45% 0.166 85)",
+          "oklch(55% 0.166 85)",
+          "oklch(70% 0.166 85)",
+          "oklch(85% 0.166 85)",
+          "oklch(95% 0.160 85)"
+        ]
+      },
+      "sur-jaune": {
+        "role": "neutral",
+        "displayName": "Noir sur jaune",
+        "canonical": "oklch(18.9% 0.010 107)",
+        "dark": "#14140F",
+        "tonalRamp": [
+          "oklch(15% 0.010 107)",
+          "oklch(25% 0.010 107)",
+          "oklch(35% 0.010 107)",
+          "oklch(45% 0.010 107)",
+          "oklch(55% 0.010 107)",
+          "oklch(70% 0.010 107)",
+          "oklch(85% 0.010 107)",
+          "oklch(95% 0.010 107)"
+        ]
+      },
+      "focus": {
+        "role": "primary",
+        "displayName": "Bleu focus",
+        "canonical": "oklch(52.2% 0.181 260)",
+        "dark": "#9DC1FA",
+        "tonalRamp": [
+          "oklch(15% 0.160 260)",
+          "oklch(25% 0.181 260)",
+          "oklch(35% 0.181 260)",
+          "oklch(45% 0.181 260)",
+          "oklch(55% 0.181 260)",
+          "oklch(70% 0.181 260)",
+          "oklch(85% 0.181 260)",
+          "oklch(95% 0.160 260)"
+        ]
+      },
+      "puce-fond": {
+        "role": "secondary",
+        "displayName": "Puce adaptable",
+        "canonical": "oklch(95.4% 0.061 91)",
+        "dark": "rgba(255,199,44,.16)",
+        "tonalRamp": [
+          "oklch(15% 0.061 91)",
+          "oklch(25% 0.061 91)",
+          "oklch(35% 0.061 91)",
+          "oklch(45% 0.061 91)",
+          "oklch(55% 0.061 91)",
+          "oklch(70% 0.061 91)",
+          "oklch(85% 0.061 91)",
+          "oklch(95% 0.061 91)"
+        ]
+      },
+      "puce-texte": {
+        "role": "secondary",
+        "displayName": "Texte de puce",
+        "canonical": "oklch(18.9% 0.010 107)",
+        "dark": "#FFD45E",
+        "tonalRamp": [
+          "oklch(15% 0.010 107)",
+          "oklch(25% 0.010 107)",
+          "oklch(35% 0.010 107)",
+          "oklch(45% 0.010 107)",
+          "oklch(55% 0.010 107)",
+          "oklch(70% 0.010 107)",
+          "oklch(85% 0.010 107)",
+          "oklch(95% 0.010 107)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Titre d'ouverture uniquement."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Titres de section."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Titres de forfait, d'étape, d'option, de bloc (1,2 à 1,45rem)."
+      },
+      "price": {
+        "displayName": "Prix",
+        "purpose": "Prix, note et téléphone de contact, chiffres tabulaires."
+      },
+      "lead": {
+        "displayName": "Chapeau",
+        "purpose": "Sous-titre d'ouverture et chapeaux de section."
+      },
+      "body": {
+        "displayName": "Texte courant",
+        "purpose": "Texte courant, base de lecture 17 px, texte à 16 px."
+      },
+      "label": {
+        "displayName": "Étiquette",
+        "purpose": "Navigation et mentions secondaires."
+      }
+    },
+    "shadows": [
+      {
+        "name": "ombre",
+        "value": "0 10px 28px -14px rgba(15,27,45,.28), 0 2px 6px -2px rgba(15,27,45,.08)",
+        "dark": "0 10px 28px -14px rgba(0,0,0,.7), 0 2px 6px -2px rgba(0,0,0,.4)",
+        "purpose": "Cartes posées sur la page (comparatif, note)."
+      },
+      {
+        "name": "ombre-haute",
+        "value": "0 18px 40px -18px rgba(15,27,45,.38), 0 3px 8px -3px rgba(15,27,45,.12)",
+        "dark": "0 18px 40px -18px rgba(0,0,0,.8), 0 3px 8px -3px rgba(0,0,0,.5)",
+        "purpose": "Étiquettes posées sur une photo."
+      },
+      {
+        "name": "ombre-bouton",
+        "value": "0 4px 12px -6px rgba(15,27,45,.35)",
+        "dark": "0 4px 12px -6px rgba(0,0,0,.6)",
+        "purpose": "Bouton jaune de rendez-vous."
+      },
+      {
+        "name": "ombre-entete",
+        "value": "0 8px 24px -18px rgba(15,27,45,.5)",
+        "dark": "0 8px 24px -16px rgba(0,0,0,.8)",
+        "purpose": "En-tête resserré au défilement."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-sortie",
+        "value": "cubic-bezier(.16,1,.3,1)",
+        "purpose": "Resserrement de l'en-tête (0,4s) et chevron des questions (0,3s)."
+      },
+      {
+        "name": "etat",
+        "value": ".2s",
+        "purpose": "Transitions de survol des boutons et liens."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "transition:none; animation:none; scroll-behavior:auto",
+        "purpose": "prefers-reduced-motion: reduce coupe tout mouvement."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "nav",
+        "value": "1140px"
+      },
+      {
+        "name": "colonne",
+        "value": "900px"
+      },
+      {
+        "name": "mobile",
+        "value": "560px"
+      },
+      {
+        "name": "etroit",
+        "value": "380px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Bouton rendez-vous",
+      "kind": "button",
+      "refersTo": "button-rdv",
+      "description": "L'action principale, seul bouton jaune ; rendez-vous par téléphone.",
+      "html": "<a class=\"ds-btn ds-btn-rdv\" href=\"#\"><svg class=\"ds-ic\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"4\" y=\"5\" width=\"16\" height=\"16\" rx=\"2\"/><path d=\"M16 3v4M8 3v4M4 11h16\"/></svg>Prendre rendez-vous</a>",
+      "css": ".ds-ic{width:1.25em;height:1.25em;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}.ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;font-family:'Barlow',system-ui,sans-serif;font-weight:700;font-size:.95rem;text-decoration:none;border-radius:10px;padding:.85rem 1.3rem;line-height:1.1;white-space:nowrap;border:1.5px solid transparent;cursor:pointer;transition:background .2s,border-color .2s,color .2s,box-shadow .2s,transform .2s}.ds-btn:focus-visible{outline:3px solid var(--focus,#1D63CF);outline-offset:3px}.ds-btn-rdv{background:var(--jaune,#FFC72C);color:var(--sur-jaune,#14140F);box-shadow:var(--ombre-bouton,0 4px 12px -6px rgba(15,27,45,.35))}.ds-btn-rdv:hover{background:var(--jaune-survol,#F2B600)}.ds-btn-rdv:active{transform:translateY(1px)}"
+    },
+    {
+      "name": "Bouton contour",
+      "kind": "button",
+      "refersTo": "button-contour",
+      "description": "Action secondaire, porte souvent le numéro de téléphone.",
+      "html": "<a class=\"ds-btn ds-btn-contour\" href=\"#\"><svg class=\"ds-ic\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2\"/></svg><span style=\"font-variant-numeric:tabular-nums\">05 57 00 00 01</span></a>",
+      "css": ".ds-ic{width:1.25em;height:1.25em;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}.ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;font-family:'Barlow',system-ui,sans-serif;font-weight:700;font-size:.95rem;text-decoration:none;border-radius:10px;padding:.85rem 1.3rem;line-height:1.1;white-space:nowrap;border:1.5px solid transparent;cursor:pointer;transition:background .2s,border-color .2s,color .2s,box-shadow .2s,transform .2s}.ds-btn:focus-visible{outline:3px solid var(--focus,#1D63CF);outline-offset:3px}.ds-btn-contour{border-color:var(--trait,#DCE3EB);color:var(--encre,#0F1B2D);background:var(--carte,#FFFFFF)}.ds-btn-contour:hover{border-color:var(--marque,#0D3D82);color:var(--marque,#0D3D82)}"
+    },
+    {
+      "name": "Bouton marque",
+      "kind": "button",
+      "refersTo": "button-marque",
+      "description": "Action de marque hors rendez-vous (avis Google).",
+      "html": "<a class=\"ds-btn ds-btn-marque\" href=\"#\">Laisser un avis Google</a>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;font-family:'Barlow',system-ui,sans-serif;font-weight:700;font-size:.95rem;text-decoration:none;border-radius:10px;padding:.85rem 1.3rem;line-height:1.1;white-space:nowrap;border:1.5px solid transparent;cursor:pointer;transition:background .2s,border-color .2s,color .2s,box-shadow .2s,transform .2s}.ds-btn:focus-visible{outline:3px solid var(--focus,#1D63CF);outline-offset:3px}.ds-btn-marque{background:var(--bande,#0D3D82);color:#FFFFFF}.ds-btn-marque:hover{background:color-mix(in srgb,var(--bande,#0D3D82) 86%,#000)}"
+    },
+    {
+      "name": "Navigation d'en-tête",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Liens de section de l'en-tête collant, état actif en bleu de marque.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\" class=\"ds-actif\">Forfaits</a><a href=\"#\">Les pièces</a><a href=\"#\">Déroulé</a><a href=\"#\">Avis</a></nav>",
+      "css": ".ds-nav{display:flex;gap:.3rem}.ds-nav a{font-family:'Barlow',system-ui,sans-serif;font-size:.88rem;font-weight:600;color:var(--texte,#364253);text-decoration:none;padding:.5rem .55rem;border-radius:8px;transition:background .2s,color .2s}.ds-nav a:hover{background:var(--fond2,#F2F5F9);color:var(--encre,#0F1B2D)}.ds-nav a.ds-actif{color:var(--marque,#0D3D82);background:color-mix(in srgb,var(--marque,#0D3D82) 10%,transparent)}.ds-nav a:focus-visible{outline:3px solid var(--focus,#1D63CF);outline-offset:3px}"
+    },
+    {
+      "name": "Badges d'option",
+      "kind": "chip",
+      "refersTo": "badge",
+      "description": "Pilule d'information ; variante jaune pâle pour l'option adaptable.",
+      "html": "<span class=\"ds-badge\">Référence constructeur</span> <span class=\"ds-badge ds-badge-adapt\">30 à 50&nbsp;% moins cher</span>",
+      "css": ".ds-badge{display:inline-flex;align-items:center;font-family:'Barlow',system-ui,sans-serif;font-size:.8rem;font-weight:700;border-radius:999px;padding:.3rem .7rem;background:var(--fond2,#F2F5F9);color:var(--encre,#0F1B2D)}.ds-badge-adapt{background:var(--puce-fond,#FFEFC2);color:var(--puce-texte,#14140F)}"
+    },
+    {
+      "name": "Ligne de forfait",
+      "kind": "custom",
+      "description": "Signature : prix aligné, compris et « non compris » écrits sur la même ligne.",
+      "html": "<div class=\"ds-tarif\"><span class=\"ds-t-ic\"><svg class=\"ds-ic\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M7 10h3V7L6.5 3.5a6 6 0 0 1 8 8l6 6a2 2 0 0 1-3 3l-6-6a6 6 0 0 1-8-8L7 10\"/></svg></span><h3>Révision complète</h3><p class=\"ds-prix\"><small>dès</small>149&nbsp;€</p><p class=\"ds-inclus\">Vidange, filtres à huile, à air et d'habitacle, 30 points de contrôle.</p><p class=\"ds-hors\"><svg class=\"ds-ic\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14\"/></svg><span><b>Non compris :</b> filtre à gasoil et bougies, selon le modèle.</span></p></div>",
+      "css": ".ds-ic{width:1.25em;height:1.25em;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}.ds-tarif{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:.2rem 1rem;padding-block:1.5rem;border-top:1px solid var(--trait,#DCE3EB);border-bottom:1px solid var(--trait,#DCE3EB);font-family:'Barlow',system-ui,sans-serif;color:var(--texte,#364253);max-width:36rem}.ds-t-ic{grid-row:span 3;display:grid;place-items:center;width:2.9rem;height:2.9rem;border-radius:12px;background:color-mix(in srgb,var(--marque,#0D3D82) 10%,transparent);color:var(--marque,#0D3D82)}.ds-tarif h3{margin:0;align-self:center;font-family:'Barlow Semi Condensed','Barlow',sans-serif;font-weight:700;font-size:1.25rem;line-height:1.08;color:var(--encre,#0F1B2D)}.ds-prix{margin:0;grid-row:1;grid-column:3;align-self:center;text-align:right;white-space:nowrap;font-family:'Barlow Semi Condensed','Barlow',sans-serif;font-weight:700;font-size:1.55rem;line-height:1;color:var(--marque,#0D3D82);font-variant-numeric:tabular-nums}.ds-prix small{font-family:'Barlow',system-ui,sans-serif;font-weight:500;font-size:.78rem;color:var(--doux,#566273);margin-right:.25rem}.ds-inclus{margin:0;grid-column:2 / 4;font-size:.95rem;line-height:1.5}.ds-hors{margin:.35rem 0 0;grid-column:2 / 4;display:flex;gap:.45rem;align-items:flex-start;font-size:.88rem;color:var(--doux,#566273)}.ds-hors .ds-ic{width:1rem;height:1rem;margin-top:.22rem}.ds-hors b{font-weight:600;color:var(--texte,#364253)}"
+    },
+    {
+      "name": "Étiquette posée",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Carte à ombre haute posée sur le bas d'une photo ; pastille jaune pour la promesse d'appel.",
+      "html": "<div class=\"ds-etiquette\"><span class=\"ds-pastille\"><svg class=\"ds-ic\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2\"/></svg></span><span><b>Un appel avant toute réparation payante</b>Si on ne vous joint pas, la voiture attend.</span></div>",
+      "css": ".ds-ic{width:1.25em;height:1.25em;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}.ds-etiquette{display:flex;gap:.8rem;align-items:flex-start;max-width:20.5rem;background:var(--carte,#FFFFFF);color:var(--texte,#364253);border-radius:12px;padding:1rem 1.15rem;box-shadow:var(--ombre-haute,0 18px 40px -18px rgba(15,27,45,.38),0 3px 8px -3px rgba(15,27,45,.12));font-family:'Barlow',system-ui,sans-serif;font-size:.9rem;line-height:1.45}.ds-etiquette b{display:block;color:var(--encre,#0F1B2D);font-size:.98rem;margin-bottom:.15rem}.ds-pastille{display:grid;place-items:center;width:2.4rem;height:2.4rem;border-radius:50%;flex-shrink:0;background:var(--jaune,#FFC72C);color:var(--sur-jaune,#14140F)}"
+    },
+    {
+      "name": "Question de comptoir",
+      "kind": "custom",
+      "refersTo": "question",
+      "description": "Question dépliable, chevron au trait qui pivote.",
+      "html": "<details class=\"ds-qa\" open><summary>« Vous prêtez une voiture ? »<svg class=\"ds-ic\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M6 9l6 6 6-6\"/></svg></summary><p>Deux véhicules de prêt, gratuits.</p></details>",
+      "css": ".ds-ic{width:1.25em;height:1.25em;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}.ds-qa{background:var(--carte,#FFFFFF);border:1px solid var(--trait,#DCE3EB);border-radius:12px;font-family:'Barlow',system-ui,sans-serif;color:var(--texte,#364253);max-width:40rem}.ds-qa summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 1.2rem;font-weight:700;color:var(--encre,#0F1B2D);font-size:1.02rem;border-radius:12px}.ds-qa summary::-webkit-details-marker{display:none}.ds-qa summary .ds-ic{color:var(--doux,#566273);transition:transform .3s cubic-bezier(.16,1,.3,1)}.ds-qa[open] summary .ds-ic{transform:rotate(180deg)}.ds-qa summary:hover{color:var(--marque,#0D3D82)}.ds-qa summary:focus-visible{outline:3px solid var(--focus,#1D63CF);outline-offset:3px}.ds-qa p{margin:0;padding:0 1.2rem 1.2rem;font-size:.95rem}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Le comptoir du garage de réseau",
+    "overview": "Le standard de la catégorie, assumé et tenu au niveau des meilleurs (AD, Eurorepar, Top Garage) : surfaces blanches et gris acier très clair, un bleu de marque profond, un jaune signal pour l'action. Rien ne cherche à surprendre dans la forme ; ce qui distingue le garage tient au fond, et le système est construit pour que ce fond se lise : les prix en chiffres tabulaires, le « non compris » écrit sous chaque forfait, l'écart origine/adaptable dans un tableau.\n\nLa densité est celle d'un site de service : titres courts en Barlow Semi Condensed, casse normale partout, texte courant en Barlow sur une base de lecture de 17 px. La profondeur vient d'ombres douces décalées vers le bas et de l'alternance blanc / gris acier entre sections ; le bleu ne remplit que les bandes de marque (contact) et les petites marques d'accent. Le seul mouvement est l'en-tête collant qui se resserre au défilement.\n\nLe système refuse l'atelier noir et rouge en capitales et les grilles de cartes « icône + titre » empilées : les forfaits sont des lignes, pas des cartes.",
+    "keyCharacteristics": [
+      "Fond clair, bleu Viallard en accent et en bande, jaune réservé à l'action rendez-vous / appel.",
+      "Barlow Semi Condensed 700 pour les titres et les prix, Barlow pour le reste ; jamais de capitales forcées.",
+      "Chiffres tabulaires sur tout ce qui se compare (prix, écarts, horaires, téléphone, note).",
+      "Coins francs mais adoucis (8 à 16 px), ombres douces décalées, filets de 1 px.",
+      "Icônes SVG au trait 1,75, couleur héritée.",
+      "Thème clair et thème sombre complets, contraste AA dans les deux."
+    ],
+    "rules": [
+      {
+        "name": "La règle du jaune qui appelle",
+        "body": "Le jaune ne marque que l'action rendez-vous / appel et ce qui la promet (pastille d'appel, étape « On vous appelle », téléphone sur la bande). Il n'est jamais un fond décoratif de section ni une couleur de titre.",
+        "section": "colors"
+      },
+      {
+        "name": "La règle des deux bleus",
+        "body": "`marque` est un bleu de texte et d'accent ; `bande` est un bleu de surface. En sombre, `marque` s'éclaircit pour rester lisible sur fond sombre tandis que `bande` reste profond : ne jamais utiliser l'un à la place de l'autre.",
+        "section": "colors"
+      },
+      {
+        "name": "La règle de la casse normale",
+        "body": "Aucun `text-transform` dans le système : titres, boutons, badges et étiquettes s'écrivent en casse de phrase.",
+        "section": "typography"
+      },
+      {
+        "name": "La règle du chiffre aligné",
+        "body": "Tout chiffre qui se compare ou se compose (prix, écarts, horaires, téléphone, note) porte `font-variant-numeric: tabular-nums` (classe utilitaire `.num` hors composants).",
+        "section": "typography"
+      },
+      {
+        "name": "La règle du pouce",
+        "body": "Téléphone et rendez-vous restent dans l'en-tête collant à toutes les largeurs.",
+        "section": "layout"
+      },
+      {
+        "name": "La règle de l'étiquette posée",
+        "body": "Une ombre haute signale un élément posé sur une photo ; une ombre simple une carte posée sur la page. Les lignes de tarifs, les repères et les questions n'ont pas d'ombre.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** réserver `jaune` au rendez-vous, à l'appel et à ce qui les promet, toujours avec `sur-jaune` dessus.",
+      "**Do** écrire les prix en Barlow Semi Condensed 700 tabulaire et dire ce qu'ils ne comprennent pas sur la même ligne.",
+      "**Do** utiliser `marque` pour le texte et les accents, `bande` pour les surfaces bleues.",
+      "**Do** garder téléphone et rendez-vous dans l'en-tête collant à toutes les largeurs, quitte à abréger le libellé.",
+      "**Do** dessiner les icônes en SVG au trait 1,75, couleur héritée.",
+      "**Do** vérifier chaque nouvelle couleur dans les deux thèmes ; une carte en sombre prend un bord `trait`."
+    ],
+    "donts": [
+      "**Don't** forcer les capitales (`text-transform`) sur un titre, un bouton ou une étiquette.",
+      "**Don't** composer l'atelier noir et rouge, ni empiler des cartes « icône + titre » : les forfaits sont des lignes.",
+      "**Don't** mettre une ombre sur une ligne de liste, un repère ou une question ; l'ombre signale un élément posé.",
+      "**Don't** poser du texte blanc sur le jaune.",
+      "**Don't** utiliser d'emoji ou d'icônes pleines (hors étoiles de note)."
+    ]
+  }
+}

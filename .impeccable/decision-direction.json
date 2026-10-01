@@ -1,0 +1,131 @@
+{
+  "title": "Garage Viallard : choisir l'univers visuel",
+  "question": "Le tirage a désigné « Le tableau d'outils ». Garde-le, prends une autre piste, ou relance.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Le tableau d'outils",
+      "kicker": "THE ROLL",
+      "lineage": "Tableau d'atelier perforé à silhouettes peintes, étiquettes Dymo en relief",
+      "thesis": "Chaque outil a sa place peinte, et ce qui manque se voit : le garage qui ne cache rien.",
+      "palette": ["#2E4B47", "#F2C230", "#141414", "#C8202A", "#DADDD9"],
+      "materials": ["panneau perforé peint", "silhouettes d'outils au pochoir", "ruban Dymo embossé", "crochets acier"],
+      "viewport": "Le panneau vert atelier occupe tout l'écran : titre peint en grand à gauche, la voiture sur le pont accrochée à droite, téléphone en ruban Dymo rouge.",
+      "risk": "Peut virer au décor si les silhouettes ne portent pas les vrais forfaits ; lisibilité du texte sur le panneau à surveiller.",
+      "raised": [
+        {"from": "challenger-ascii", "raise": "Une seule encre de peinture : le jaune ne sert qu'aux silhouettes d'outils et à l'action principale."},
+        {"from": "challenger-vu", "raise": "Le rouge est réservé à ce qui n'est pas compris dans un forfait ; le pas des trous du panneau sert de grille à toute la page."},
+        {"from": "challenger-ikebana", "raise": "Le panneau garde des emplacements vides : on n'accroche que ce qui sert."},
+        {"from": "challenger-yeye", "raise": "Le panneau couvre des sections entières, jamais une simple bande décorative."},
+        {"from": "challenger-arcade", "raise": "L'état actif, c'est l'outil décroché : son ombre peinte reste visible à sa place."}
+      ]
+    },
+    {
+      "id": "model-pick",
+      "label": "L'ordre de réparation",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "Liasse autocopiante de bon de travaux, tampon du garage",
+      "thesis": "Le site est le bon de travaux : l'accord du client par téléphone y a sa propre case.",
+      "palette": ["#F3E27A", "#2B3A8C", "#F4C6CF", "#FBFAF5", "#111111"],
+      "materials": ["papier carbone", "liasse jaune, rose et blanche", "tampon encreur", "cases à cocher"],
+      "viewport": "Un bon de travaux pleine page : en-tête tamponné Garage Viallard, la case « Accord du client par téléphone » cochée en bleu carbone.",
+      "risk": "Familière dans les refontes de métiers manuels ; peut faire administratif si on la pose timidement."
+    },
+    {
+      "id": "challenger-boxes",
+      "label": "Le comptoir pièces",
+      "verdict": "competitive",
+      "lineage": "Mur de boîtes de pièces détachées étiquetées",
+      "thesis": "Chaque forfait est une boîte étiquetée, et les pièces changées repartent dans un carton à votre nom.",
+      "palette": ["#C49A6C", "#111111", "#F6F4EE", "#1F4FA0", "#C42B22"],
+      "materials": ["carton ondulé kraft", "étiquette de référence", "code-barres", "papier de soie"],
+      "viewport": "Une pile de boîtes : sur chaque tranche, le nom du forfait et son prix ; une boîte à moitié sortie montre origine contre adaptable.",
+      "case": "Se marie bien : origine et adaptable deviennent deux boîtes côte à côte. Plus clair sur les pièces, mais pas plus parlant pour un garagiste que le tableau d'outils.",
+      "risk": "Peut faire entrepôt en ligne plutôt que garage de quartier.",
+      "hero": "https://impeccable.style/worlds/cards/textiles-weave-drape-fashion-sneaker-box-stacks-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/textiles-weave-drape-fashion-sneaker-box-stacks.webp"
+    },
+    {
+      "id": "challenger-ascii",
+      "label": "Scène en caractères",
+      "verdict": "declined",
+      "lineage": "Image vivante rendue en caractères de machine à écrire",
+      "thesis": "L'atelier redessiné en caractères dont la densité fait la lumière.",
+      "palette": ["#0B0B0B", "#F0A030"],
+      "materials": ["grille monospace", "phosphore ambre"],
+      "viewport": "La voiture sur le pont en caractères ambre sur noir.",
+      "case": "Un garagiste du Blayais ne s'y reconnaît pas, et les prix y perdent en lisibilité.",
+      "risk": "Gadget technique sans rapport avec le métier.",
+      "kept": "Une seule encre, tenue partout.",
+      "hero": "https://impeccable.style/worlds/cards/medium-native-ascii-live-scene-render-hero.webp"
+    },
+    {
+      "id": "challenger-vu",
+      "label": "Rampe de vumètres",
+      "verdict": "declined",
+      "lineage": "Rangée d'aiguilles sur une console de studio",
+      "thesis": "Les forfaits comme une rangée de cadrans identiques.",
+      "palette": ["#EFE6CF", "#111111", "#C8202A", "#5A3B22"],
+      "materials": ["cadrans sous verre", "noyer", "acier"],
+      "viewport": "Six cadrans alignés, une aiguille par forfait.",
+      "case": "Le cadran ne dit pas un prix plus clairement qu'un chiffre ; l'univers studio n'est pas celui du garage.",
+      "risk": "Joli, mais hors sujet.",
+      "kept": "Des unités identiques qui servent de règle, et un rouge réservé à un seul sens.",
+      "hero": "https://impeccable.style/worlds/cards/signals-instruments-vu-meter-bridge-hero.webp"
+    },
+    {
+      "id": "challenger-ikebana",
+      "label": "Alcôve et bouquet",
+      "verdict": "declined",
+      "lineage": "Arrangement ikebana dans une alcôve",
+      "thesis": "Le vide autour de chaque élément devient actif.",
+      "palette": ["#E8E2D6", "#6B5B4B", "#3F5FA8", "#3A2E22"],
+      "materials": ["plâtre", "bois flotté", "bronze"],
+      "viewport": "Une seule ligne de texte décentrée dans beaucoup de vide.",
+      "case": "À l'opposé d'un comptoir de garage : ni le garagiste ni ses clients ne s'y reconnaissent.",
+      "risk": "Trop précieux pour le métier.",
+      "kept": "Le vide qui compte : n'accrocher que l'utile.",
+      "hero": "https://impeccable.style/worlds/cards/growth-metamorphosis-branching-ikebana-ma-arrangement-hero.webp"
+    },
+    {
+      "id": "challenger-yeye",
+      "label": "Pochette de disque yéyé",
+      "verdict": "declined",
+      "lineage": "Pochettes de 45 tours françaises des années 60",
+      "thesis": "Un aplat saturé, un portrait recadré, quatre titres rangés dans un coin.",
+      "palette": ["#F07A1A", "#1FA5A0", "#FFFFFF", "#1A1A1A"],
+      "materials": ["aplat imprimé", "portrait chaud"],
+      "viewport": "Fond mandarine, le mécanicien recadré au menton, les quatre étapes en liste de titres.",
+      "case": "Clair, mais c'est un clin d'œil culturel, pas le quotidien d'un garage.",
+      "risk": "Rétro décoratif.",
+      "kept": "Un fond qui s'engage sur toute la surface.",
+      "hero": "https://impeccable.style/worlds/cards/posters-covers-sleeves-yeye-pop-sleeve-hero.webp"
+    },
+    {
+      "id": "challenger-arcade",
+      "label": "Allée de bornes d'arcade",
+      "verdict": "declined",
+      "lineage": "Frontons lumineux de bornes d'arcade",
+      "thesis": "Une borne par section, le fronton allumé signale où l'on est.",
+      "palette": ["#0A0A12", "#20D0E0", "#E020A0", "#F6F6F6"],
+      "materials": ["néon", "aérographe", "chrome"],
+      "viewport": "Une allée sombre, le fronton « Garage Viallard » qui s'allume.",
+      "case": "Hors du monde du garagiste, et le néon brouille la lecture des prix.",
+      "risk": "Ludique hors de propos.",
+      "kept": "L'état actif se voit de loin.",
+      "hero": "https://impeccable.style/worlds/cards/pop-culture-shelf-arcade-marquee-row-hero.webp"
+    }
+  ],
+  "reroll": {"registers": ["safer", "bolder"]},
+  "buildPath": {"value": "code"},
+  "canon": true,
+  "canonCard": {
+    "label": "Le standard des garages",
+    "thesis": "Ce que les sites de garage montrent tous, exécuté au mieux.",
+    "palette": ["#0E0E0D", "#F2F1EE", "#A3231C"],
+    "materials": ["grande photo d'atelier sombre", "capitales ultra-grasses", "noir, blanc, rouge"],
+    "viewport": "Photo d'atelier plein écran, titre en capitales sur un bloc noir, bouton rouge.",
+    "risk": "Impossible à distinguer de la concurrence : c'est déjà la version en ligne aujourd'hui."
+  },
+  "steer": true
+}

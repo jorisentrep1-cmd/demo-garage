@@ -6,11 +6,19 @@
 <title>Garage Viallard — Mécanique à Saint-Savin</title>
 <meta name="description" content="Garage toutes marques à Saint-Savin : forfaits affichés, choix entre pièce d'origine et adaptable, appel systématique avant toute réparation payante."/>
 <meta name="robots" content="noindex,nofollow"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="preload" href="/fonts/barlow-semi-condensed-700.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="preload" href="/fonts/barlow-400.woff2" as="font" type="font/woff2" crossorigin/>
 <script>try{var t=localStorage.getItem("ns-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <style>
+/* Polices servies par le site lui-meme : aucune adresse IP de visiteur
+   n'est transmise a Google (RGPD). Sous-ensemble latin, qui couvre
+   les accents, les guillemets, l'euro et les espaces insecables. */
+@font-face{font-family:'Barlow';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/barlow-400.woff2) format('woff2')}
+@font-face{font-family:'Barlow';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/barlow-500.woff2) format('woff2')}
+@font-face{font-family:'Barlow';font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/barlow-600.woff2) format('woff2')}
+@font-face{font-family:'Barlow';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/barlow-700.woff2) format('woff2')}
+@font-face{font-family:'Barlow Semi Condensed';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/barlow-semi-condensed-700.woff2) format('woff2')}
+
 /* ---------------------------------------------------------------
    Le standard des garages de reseau, au niveau des meilleurs :
    surfaces claires, un bleu de marque, le jaune reserve au
@@ -38,6 +46,8 @@
   --ombre-bouton:0 4px 12px -6px rgba(15,27,45,.35);
   --ombre-entete:0 8px 24px -18px rgba(15,27,45,.5);
   --bord-carte:transparent;
+  --puce-fond:#FFEFC2;
+  --puce-texte:#14140F;
   color-scheme:light;
 }
 @media (prefers-color-scheme:dark){
@@ -59,6 +69,8 @@
     --ombre-bouton:0 4px 12px -6px rgba(0,0,0,.6);
     --ombre-entete:0 8px 24px -16px rgba(0,0,0,.8);
     --bord-carte:var(--trait);
+    --puce-fond:rgba(255,199,44,.16);
+    --puce-texte:#FFD45E;
     color-scheme:dark;
   }
 }
@@ -80,6 +92,8 @@
   --ombre-bouton:0 4px 12px -6px rgba(0,0,0,.6);
   --ombre-entete:0 8px 24px -16px rgba(0,0,0,.8);
   --bord-carte:var(--trait);
+  --puce-fond:rgba(255,199,44,.16);
+  --puce-texte:#FFD45E;
   color-scheme:dark;
 }
 
@@ -130,7 +144,7 @@ svg.ic{width:1.25em;height:1.25em;flex-shrink:0;fill:none;stroke:currentColor;st
 .marque-nom small{display:block;font-family:'Barlow',sans-serif;font-weight:500;font-size:.74rem;color:var(--doux);
   letter-spacing:.02em;margin-top:.2rem}
 .nav{display:flex;gap:.3rem;margin-left:auto}
-.nav a{font-size:.88rem;font-weight:600;color:var(--texte);text-decoration:none;padding:.5rem .7rem;border-radius:8px;
+.nav a{font-size:.88rem;font-weight:600;color:var(--texte);text-decoration:none;padding:.5rem .7rem;border-radius:8px;white-space:nowrap;
   transition:background .2s,color .2s}
 .nav a:hover{background:var(--fond2);color:var(--encre)}
 .nav a.actif{color:var(--marque);background:color-mix(in srgb,var(--marque) 10%,transparent)}
@@ -158,7 +172,8 @@ svg.ic{width:1.25em;height:1.25em;flex-shrink:0;fill:none;stroke:currentColor;st
 .btn-marque:hover{background:color-mix(in srgb,var(--bande) 86%,#000)}
 .court,.moyen{display:none}
 
-@media(max-width:1020px){.nav{display:none}.e-actions{margin-left:auto}}
+@media(max-width:1270px){.marque-nom small{display:none}}
+@media(max-width:1140px){.nav{display:none}.e-actions{margin-left:auto}}
 @media(max-width:560px){
   .env{padding-inline:1rem}
   .entete .env{gap:.6rem;min-height:3.9rem}
@@ -187,7 +202,7 @@ svg.ic{width:1.25em;height:1.25em;flex-shrink:0;fill:none;stroke:currentColor;st
 .etoiles svg{width:17px;height:17px;fill:currentColor;stroke:none}
 .o-note b{color:var(--encre);font-weight:700}
 .o-photo{position:relative;margin:0}
-.o-photo img{width:100%;height:min(66vh,600px);min-height:420px;object-fit:cover;object-position:center 38%;border-radius:16px}
+.o-photo img{width:100%;height:min(66vh,600px);min-height:420px;object-fit:cover;object-position:center 30%;border-radius:16px}
 .o-promesse{position:absolute;left:-1.5rem;bottom:1.5rem;max-width:20.5rem;display:flex;gap:.8rem;align-items:flex-start;
   background:var(--carte);color:var(--texte);border-radius:12px;padding:1rem 1.15rem;box-shadow:var(--ombre-haute);font-size:.9rem;line-height:1.45}
 .o-promesse b{display:block;color:var(--encre);font-size:.98rem;margin-bottom:.15rem}
@@ -197,7 +212,7 @@ svg.ic{width:1.25em;height:1.25em;flex-shrink:0;fill:none;stroke:currentColor;st
   .ouverture{padding-block:1.8rem 2rem}
   .ouverture .env{grid-template-columns:1fr;gap:1.8rem}
   .o-photo img{height:auto;min-height:0;aspect-ratio:16/11}
-  .o-promesse{position:static;max-width:none;margin-top:-1.4rem;margin-inline:.8rem;position:relative}
+  .o-promesse{position:relative;inset:auto;max-width:none;margin-top:-1.4rem;margin-inline:.8rem}
 }
 @media(max-width:560px){
   .ouverture h1{font-size:2.35rem}
@@ -237,7 +252,14 @@ h2{font-size:clamp(1.85rem,3.3vw,2.6rem);letter-spacing:-.015em}
 @media(max-width:560px){.sect{padding-block:3.6rem}}
 
 /* --- grille tarifaire : des lignes, pas des cartes --- */
+.f-tete{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,25rem);gap:3rem;align-items:end}
+.f-photo{margin:0}
+.f-photo img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:14px}
+@media(max-width:900px){.f-tete{grid-template-columns:1fr;gap:1.6rem}}
 .tarifs{list-style:none;margin-top:2.4rem;display:grid;grid-template-columns:1fr 1fr;gap:0 3rem}
+/* Chaque ligne occupe trois rangees partagees : titres, textes et « non compris »
+   tombent a la meme hauteur dans les deux colonnes. */
+@media(min-width:901px){.tarif{grid-row:span 3;grid-template-rows:subgrid;row-gap:.2rem}}
 .tarif{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:.2rem 1rem;padding-block:1.5rem;border-top:1px solid var(--trait)}
 .tarif:nth-last-child(-n+2){border-bottom:1px solid var(--trait)}
 .t-ic{grid-row:span 3;display:grid;place-items:center;width:2.9rem;height:2.9rem;border-radius:12px;
@@ -273,7 +295,7 @@ h2{font-size:clamp(1.85rem,3.3vw,2.6rem);letter-spacing:-.015em}
 .option h3{font-size:1.45rem}
 .o-badge{display:inline-flex;align-items:center;gap:.35rem;margin-top:.6rem;font-size:.8rem;font-weight:700;border-radius:999px;
   padding:.3rem .7rem;background:var(--fond2);color:var(--encre)}
-.option.adapt .o-badge{background:color-mix(in srgb,var(--jaune) 32%,transparent)}
+.option.adapt .o-badge{background:var(--puce-fond);color:var(--puce-texte)}
 .option p{margin-top:.9rem;font-size:.95rem}
 .ecart{grid-column:1 / -1;border-top:1px solid var(--trait);padding:1.4rem 1.6rem 1.5rem;background:var(--fond2)}
 .ecart h3{font-size:1rem;font-family:'Barlow',sans-serif;font-weight:700}
@@ -282,7 +304,7 @@ h2{font-size:clamp(1.85rem,3.3vw,2.6rem);letter-spacing:-.015em}
 .ecart td{text-align:right;font-weight:700;color:var(--encre);padding:.45rem 0;border-bottom:1px solid var(--trait);font-variant-numeric:tabular-nums;white-space:nowrap}
 .ecart p{margin-top:.8rem;font-size:.9rem}
 .p-photo{margin:0;border-radius:16px;overflow:hidden;position:relative;min-height:22rem}
-.p-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.p-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% center}
 @media(max-width:900px){.p-grille{grid-template-columns:1fr}.p-photo{min-height:0}.p-photo img{position:static;height:auto;aspect-ratio:4/3}}
 @media(max-width:600px){.compare{grid-template-columns:1fr}.option + .option{border-left:0;border-top:1px solid var(--trait)}.option{padding:1.5rem 1.3rem}.ecart{padding-inline:1.3rem}}
 
@@ -339,7 +361,7 @@ h2{font-size:clamp(1.85rem,3.3vw,2.6rem);letter-spacing:-.015em}
 @media(max-width:480px){.chemins .btn{flex:1 1 100%}}
 
 /* --- questions --- */
-.questions{margin-top:2.2rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem 1.4rem;align-items:start}
+.questions{margin-top:2.2rem;display:grid;gap:.8rem;max-width:52rem}
 .qa{background:var(--carte);border:1px solid var(--trait);border-radius:12px}
 .qa summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:1rem;
   padding:1.1rem 1.2rem;font-weight:700;color:var(--encre);font-size:1.02rem;border-radius:12px}
@@ -348,7 +370,6 @@ h2{font-size:clamp(1.85rem,3.3vw,2.6rem);letter-spacing:-.015em}
 .qa[open] summary svg{transform:rotate(180deg)}
 .qa summary:hover{color:var(--marque)}
 .qa p{padding:0 1.2rem 1.2rem;font-size:.95rem}
-@media(max-width:760px){.questions{grid-template-columns:1fr}}
 
 /* --- contact : la bande de marque --- */
 .contact{background:var(--bande);color:var(--sur-bande-doux);padding-block:4.5rem}
@@ -389,7 +410,7 @@ footer a{color:var(--encre)}
 <div class="infos">
   <div class="env">
     <span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0-6 0"/><path d="M17.66 16.66 13.41 20.9a2 2 0 0 1-2.83 0l-4.24-4.24a8 8 0 1 1 11.32 0z"/></svg>12 route de Bordeaux, 33920 Saint-Savin</span>
-    <span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Lundi au vendredi 8 h – 18 h, samedi 8 h – 12 h</span>
+    <span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Lun.–jeu. 8 h–12 h, 14 h–18 h · ven. jusqu'à 17 h · sam. 8 h–12 h</span>
     <span class="droite"><b class="num">05 57 00 00 01</b></span>
   </div>
 </div>
@@ -398,7 +419,7 @@ footer a{color:var(--encre)}
   <div class="env">
     <a class="marque" href="#haut" aria-label="Garage Viallard, retour en haut">
       <span class="marque-sigle" aria-hidden="true">GV</span>
-      <span class="marque-nom">Garage Viallard<small>Mécanique toutes marques · Saint-Savin</small></span>
+      <span class="marque-nom">Garage Viallard<small>Mécanique · Carrosserie · Pneus · Saint-Savin</small></span>
     </a>
     <nav class="nav" aria-label="Sections">
       <a href="#forfaits">Forfaits</a>
@@ -421,7 +442,7 @@ footer a{color:var(--encre)}
   <div class="env">
     <div class="o-texte">
       <h1>On vous appelle <em>avant</em> de réparer.</h1>
-      <p class="o-sous">Garage toutes marques à Saint-Savin depuis 2011. Jamais une facture plus élevée que le devis sans que vous ayez dit oui au téléphone : c'est la règle de la maison.</p>
+      <p class="o-sous">Garage toutes marques à Saint-Savin depuis 2011. Jamais une facture plus élevée que le devis sans que vous ayez dit oui au téléphone : c'est la règle de la maison.</p>
       <div class="o-actions">
         <a class="btn btn-rdv" href="#contact"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M16 3v4M8 3v4M4 11h16"/></svg>Prendre rendez-vous</a>
         <a class="btn btn-contour" href="tel:+33557000001"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span class="num">05 57 00 00 01</span></a>
@@ -433,8 +454,8 @@ footer a{color:var(--encre)}
     </div>
     <figure class="o-photo">
       <picture>
-        <source media="(max-width:900px)" srcset="/img/g-atelier-flou-m.jpg"/>
-        <img src="/img/g-atelier-flou.jpg" alt="Voiture sur le pont élévateur dans l'atelier, plaque floutée" width="1500" height="2026" fetchpriority="high"/>
+        <source media="(max-width:900px)" srcset="/img/g-moteur-m.jpg"/>
+        <img src="/img/g-moteur.jpg" alt="Mécanicien penché sur un moteur, à l'atelier" width="1400" height="2100" fetchpriority="high"/>
       </picture>
       <figcaption class="o-promesse">
         <span class="pastille"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/><path d="M15 7a2 2 0 0 1 2 2M15 3a6 6 0 0 1 6 6"/></svg></span>
@@ -446,7 +467,7 @@ footer a{color:var(--encre)}
 
 <div class="reperes">
   <ul class="env" aria-label="En bref">
-    <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M5 17H3v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0H9m-6-6h15m-6 0V6"/></svg><div><b>Toutes marques</b><span>Essence, diesel et hybride</span></div></li>
+    <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M5 17H3v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0H9m-6-6h15m-6 0V6"/></svg><div><b>Mécanique, carrosserie, pneus</b><span>Toutes marques : essence, diesel et hybride</span></div></li>
     <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="M10.85 12.15 19 4M18 5l2 2M15 8l2 2"/></svg><div><b>Deux voitures de prêt</b><span>Gratuites, à réserver avec le rendez-vous</span></div></li>
     <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 17H3M6 10 3 7l3-3M3 7h18M18 20l3-3-3-3"/></svg><div><b>Origine ou adaptable</b><span>Les deux prix, vous choisissez</span></div></li>
     <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10h3V7L6.5 3.5a6 6 0 0 1 8 8l6 6a2 2 0 0 1-3 3l-6-6a6 6 0 0 1-8-8L7 10"/></svg><div><b>Depuis 2011</b><span>12 route de Bordeaux, Saint-Savin</span></div></li>
@@ -455,9 +476,14 @@ footer a{color:var(--encre)}
 
 <section class="sect" id="forfaits">
   <div class="env">
-    <div class="s-tete">
-      <h2>Nos forfaits, et ce qu'ils ne comprennent pas</h2>
-      <p>Un prix seul ne veut rien dire tant qu'on ne sait pas ce qu'il y a dedans. Voilà les deux.</p>
+    <div class="f-tete">
+      <div class="s-tete">
+        <h2>Nos forfaits, et ce qu'ils ne comprennent pas</h2>
+        <p>Un prix seul ne veut rien dire tant qu'on ne sait pas ce qu'il y a dedans. Voilà les deux.</p>
+      </div>
+      <figure class="f-photo">
+        <img src="/img/g-moyeu.jpg" alt="Mécanicien ganté remontant un moyeu de roue, voiture sur le pont" width="1400" height="788" loading="lazy" decoding="async"/>
+      </figure>
     </div>
     <ul class="tarifs">
       <li class="tarif">
@@ -465,28 +491,28 @@ footer a{color:var(--encre)}
         <h3>Révision complète</h3>
         <p class="t-prix"><small>dès</small>149&nbsp;€</p>
         <p class="t-inclus">Vidange, filtres à huile, à air et d'habitacle, 30 points de contrôle, mise à niveau des liquides.</p>
-        <p class="t-hors"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span><b>Non compris :</b> filtre à gasoil et bougies, selon le modèle.</span></p>
+        <p class="t-hors"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span><b>Non compris :</b> filtre à gasoil et bougies, selon le modèle.</span></p>
       </li>
       <li class="tarif">
         <span class="t-ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 19.42c2.6 2.1 6.4 2.1 9 0 2.6-2.1 3.26-5.71 1.56-8.55l-4.89-7.26a1.4 1.4 0 0 0-2.34 0l-4.9 7.26C4.24 13.71 4.9 17.32 7.5 19.42z"/></svg></span>
         <h3>Vidange &amp; filtres</h3>
         <p class="t-prix"><small>dès</small>79&nbsp;€</p>
         <p class="t-inclus">Huile adaptée au moteur, filtre à huile, filtre à air, contrôle des niveaux.</p>
-        <p class="t-hors"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span><b>Non compris :</b> huiles spécifiques constructeur, +15 à 30&nbsp;€.</span></p>
+        <p class="t-hors"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span><b>Non compris :</b> huiles spécifiques constructeur, +15 à 30&nbsp;€.</span></p>
       </li>
       <li class="tarif">
         <span class="t-ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 5.5v.01M18.5 12h.01M12 18.5v.01M5.5 12h.01"/></svg></span>
         <h3>Freinage avant</h3>
         <p class="t-prix"><small>dès</small>120&nbsp;€</p>
         <p class="t-inclus">Plaquettes, main-d'œuvre, contrôle des disques et purge si nécessaire.</p>
-        <p class="t-hors"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span><b>Non compris :</b> les disques, si l'usure les condamne. On vous montre la cote.</span></p>
+        <p class="t-hors"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span><b>Non compris :</b> les disques, si l'usure les condamne. On vous montre la cote.</span></p>
       </li>
       <li class="tarif">
         <span class="t-ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4 7 17M17 7l1.4-1.4"/></svg></span>
         <h3>Pneumatique, l'unité</h3>
         <p class="t-prix"><small>dès</small>55&nbsp;€</p>
         <p class="t-inclus">Montage, équilibrage, valve neuve, recyclage de l'ancien.</p>
-        <p class="t-hors"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span><b>Non compris :</b> la géométrie, 60&nbsp;€, utile si l'usure est irrégulière.</span></p>
+        <p class="t-hors"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span><b>Non compris :</b> la géométrie, 60&nbsp;€, utile si l'usure est irrégulière.</span></p>
       </li>
       <li class="tarif">
         <span class="t-ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></span>
@@ -500,7 +526,7 @@ footer a{color:var(--encre)}
         <h3>Pré-contrôle technique</h3>
         <p class="t-prix">39&nbsp;€</p>
         <p class="t-inclus">Les 133 points du contrôle passés en revue, liste des refus probables.</p>
-        <p class="t-hors"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span><b>Non compris :</b> le contrôle lui-même. On prépare, on ne valide pas.</span></p>
+        <p class="t-hors"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span><b>Non compris :</b> le contrôle lui-même. On prépare, on ne valide pas.</span></p>
       </li>
     </ul>
     <div class="t-pied">
@@ -513,7 +539,7 @@ footer a{color:var(--encre)}
 <section class="sect gris" id="pieces">
   <div class="env">
     <div class="s-tete">
-      <h2>Pièce d'origine ou adaptable : vous choisissez</h2>
+      <h2>Pièce d'origine ou adaptable : vous choisissez</h2>
       <p>La plupart des garages choisissent pour vous. Nous, on donne les deux prix et vous tranchez.</p>
     </div>
     <div class="p-grille">
@@ -540,7 +566,7 @@ footer a{color:var(--encre)}
         </div>
       </div>
       <figure class="p-photo">
-        <img src="/img/g-moteur.jpg" alt="Mécanicien au travail sur un moteur" width="1400" height="2100" loading="lazy" decoding="async"/>
+        <img src="/img/g-cle.jpg" alt="Serrage à la clé dans le compartiment moteur" width="1400" height="1050" loading="lazy" decoding="async"/>
       </figure>
     </div>
   </div>
@@ -555,12 +581,12 @@ footer a{color:var(--encre)}
       <li class="etape">
         <span class="e-num" aria-hidden="true">1</span>
         <h3>Vous déposez</h3>
-        <p>Entre 8 h et 9 h. On note ce que vous avez constaté : un bruit, un voyant, une odeur. Dites-le comme vous pouvez.</p>
+        <p>Entre 8 h et 9 h. On note ce que vous avez constaté : un bruit, un voyant, une odeur. Dites-le comme vous pouvez.</p>
       </li>
       <li class="etape cle">
         <span class="e-num" aria-hidden="true">2</span>
         <h3>On vous appelle</h3>
-        <p>Avant de démonter quoi que ce soit de payant : ce qu'on a trouvé, le prix des deux options de pièce, le délai. Si on ne vous joint pas, la voiture attend.</p>
+        <p>Avant de démonter quoi que ce soit de payant : ce qu'on a trouvé, le prix des deux options de pièce, le délai. Si on ne vous joint pas, la voiture attend.</p>
       </li>
       <li class="etape">
         <span class="e-num" aria-hidden="true">3</span>
@@ -578,7 +604,7 @@ footer a{color:var(--encre)}
 
 <figure class="bande">
   <img src="/img/g-dessous.jpg" alt="Train avant démonté sur chandelles, amortisseur posé au sol" width="1400" height="933" loading="lazy" decoding="async"/>
-  <figcaption><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Les pièces changées sont mises de côté : on vous les montre.</span></figcaption>
+  <figcaption><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Les pièces changées sont mises de côté : on vous les montre.</span></figcaption>
 </figure>
 
 <section class="sect avis" id="avis">
@@ -589,8 +615,8 @@ footer a{color:var(--encre)}
       <span>81 avis Google</span>
     </div>
     <div>
-      <h2>Vous venez de récupérer la voiture ?</h2>
-      <p>Un carton avec un QR code est agrafé à la facture. Il mène ici. Si tout s'est bien passé, deux lignes sur Google aident le prochain à choisir son garage. Si quelque chose n'a pas été, dites-le-nous directement : on préfère le réparer que le lire en ligne.</p>
+      <h2>Vous venez de récupérer la voiture ?</h2>
+      <p>Un carton avec un QR code est agrafé à la facture. Il mène ici. Si tout s'est bien passé, deux lignes sur Google aident le prochain à choisir son garage. Si quelque chose n'a pas été, dites-le-nous directement : on préfère le réparer que le lire en ligne.</p>
       <div class="chemins">
         <a class="btn btn-marque" href="https://search.google.com/local/writereview?placeid=PLACE_ID_DU_CLIENT" target="_blank" rel="noopener">Laisser un avis Google</a>
         <a class="btn btn-contour" href="tel:+33557000001">Nous dire ce qui n'a pas été</a>
@@ -606,19 +632,19 @@ footer a{color:var(--encre)}
     </div>
     <div class="questions">
       <details class="qa" open>
-        <summary>« Vous prêtez une voiture ? »<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
-        <p>Deux véhicules de prêt, gratuits. Ils partent vite : réservez-les en prenant rendez-vous, pas le matin même.</p>
+        <summary>« Vous prêtez une voiture ? »<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <p>Deux véhicules de prêt, gratuits. Ils partent vite : réservez-les en prenant rendez-vous, pas le matin même.</p>
       </details>
       <details class="qa">
-        <summary>« Je peux venir avec mes pièces ? »<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <summary>« Je peux venir avec mes pièces ? »<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
         <p>Oui, et on ne fait pas la tête. On facture la main-d'œuvre seule, et la garantie ne couvre que notre travail.</p>
       </details>
       <details class="qa">
-        <summary>« Combien de temps d'attente ? »<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
-        <p>Un entretien, trois à cinq jours. Une panne immobilisante, on essaie de caler dans la journée : on garde un créneau pour ça.</p>
+        <summary>« Combien de temps d'attente ? »<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <p>Un entretien, trois à cinq jours. Une panne immobilisante, on essaie de caler dans la journée : on garde un créneau pour ça.</p>
       </details>
       <details class="qa">
-        <summary>« Vous faites le contrôle technique ? »<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <summary>« Vous faites le contrôle technique ? »<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
         <p>Non, on n'est pas centre agréé. On fait le pré-contrôle à 39&nbsp;€ et on vous dit ce qui recalera, pour éviter deux passages.</p>
       </details>
     </div>
@@ -628,17 +654,17 @@ footer a{color:var(--encre)}
 <section class="contact" id="contact">
   <div class="env">
     <div>
-      <h2>Prendre rendez-vous</h2>
+      <h2>Rendez-vous par téléphone</h2>
       <a class="c-tel" href="tel:+33557000001"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>05 57 00 00 01</a>
-      <p class="c-note">On décroche à l'atelier. Si ça sonne dans le vide, c'est qu'on est sous une voiture : rappelez dans dix minutes, ça marche toujours.</p>
+      <p class="c-note">On décroche à l'atelier. Si ça sonne dans le vide, c'est qu'on est sous une voiture : rappelez dans dix minutes, ça marche toujours.</p>
       <p class="c-adresse"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0-6 0"/><path d="M17.66 16.66 13.41 20.9a2 2 0 0 1-2.83 0l-4.24-4.24a8 8 0 1 1 11.32 0z"/></svg>12 route de Bordeaux, 33920 Saint-Savin</p>
     </div>
     <div class="horaires">
       <h3><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Horaires de l'atelier</h3>
       <dl>
-        <div><dt>Lundi – jeudi</dt><dd>8 h – 12 h · 14 h – 18 h</dd></div>
-        <div><dt>Vendredi</dt><dd>8 h – 12 h · 14 h – 17 h</dd></div>
-        <div><dt>Samedi</dt><dd>8 h – 12 h</dd></div>
+        <div><dt>Lundi – jeudi</dt><dd>8 h – 12 h · 14 h – 18 h</dd></div>
+        <div><dt>Vendredi</dt><dd>8 h – 12 h · 14 h – 17 h</dd></div>
+        <div><dt>Samedi</dt><dd>8 h – 12 h</dd></div>
         <div class="ferme"><dt>Dimanche</dt><dd>Fermé</dd></div>
       </dl>
       <a class="btn btn-rdv" href="tel:+33557000001"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Appeler le garage</a>

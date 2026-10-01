@@ -26,3 +26,12 @@ FIRST VIEWPORT: Bandeau démo, barre d'infos (adresse, horaires, téléphone), e
 FORM: Standard de la catégorie (sortie canon), hors liste ordonnée ; seed 987f48ab. Signature : la grille tarifaire en lignes avec « non compris » écrit, et le comparatif origine/adaptable avec l'écart chiffré ; mouvement unique : la barre d'en-tête qui se resserre au défilement.
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+
+## Décisions prises pendant la finition (2026-10-01)
+
+- « Prix TTC. » sous la grille : règle maison NovaSpot (TTC sur les démos grand public, HT sur le B2B) et obligation d'affichage des prix TTC pour les garages.
+- Le rendez-vous se prend par téléphone (principe produit n° 2) : la destination des boutons s'intitule « Rendez-vous par téléphone ». Un formulaire de demande de rendez-vous reste une option à proposer à Joris, pas une fonction de la démo.
+- Pas de lien « Itinéraire » : l'adresse est fictive, un lien Maps pointerait vers un lieu réel.
+- Photo du haut : le mécanicien (`g-moteur`), car la voiture sur le pont ne se cadre pas sans sa plaque floutée.
+- Polices auto-hébergées (`/fonts/`, sous-ensemble latin) : aucune requête vers Google.
+

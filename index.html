@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Garage Viallard — Mécanique à Saint-Savin</title>
 <meta name="description" content="Garage toutes marques à Saint-Savin : forfaits affichés, choix entre pièce d'origine et adaptable, appel systématique avant toute réparation payante."/>
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="fr_FR"/>
+<meta property="og:url" content="https://demo-garage.novaspot.fr/"/>
+<meta property="og:title" content="Garage Viallard — Mécanique à Saint-Savin"/>
+<meta property="og:description" content="Garage toutes marques à Saint-Savin : forfaits affichés, choix entre pièce d'origine et adaptable, appel systématique avant toute réparation payante."/>
+<meta property="og:image" content="https://novaspot.fr/img/demo-garage-v3.jpg"/>
+<meta property="og:image:width" content="800"/>
+<meta property="og:image:height" content="500"/>
+<meta name="twitter:card" content="summary_large_image"/>
 <meta name="robots" content="noindex,nofollow"/>
 <link rel="preload" href="/fonts/barlow-semi-condensed-700.woff2" as="font" type="font/woff2" crossorigin/>
 <link rel="preload" href="/fonts/barlow-400.woff2" as="font" type="font/woff2" crossorigin/>
@@ -482,7 +491,7 @@ footer a{color:var(--encre)}
         <p>Un prix seul ne veut rien dire tant qu'on ne sait pas ce qu'il y a dedans. Voilà les deux.</p>
       </div>
       <figure class="f-photo">
-        <img src="/img/g-moyeu.jpg" alt="Mécanicien ganté remontant un moyeu de roue, voiture sur le pont" width="1400" height="788" loading="lazy" decoding="async"/>
+        <img src="/img/g-moyeu.jpg" srcset="/img/g-moyeu-900.jpg 900w, /img/g-moyeu.jpg 1400w" sizes="(max-width:900px) 92vw, 425px" alt="Mécanicien ganté remontant un moyeu de roue, voiture sur le pont" width="1400" height="788" loading="lazy" decoding="async"/>
       </figure>
     </div>
     <ul class="tarifs">
@@ -566,7 +575,7 @@ footer a{color:var(--encre)}
         </div>
       </div>
       <figure class="p-photo">
-        <img src="/img/g-cle.jpg" alt="Serrage à la clé dans le compartiment moteur" width="1400" height="1050" loading="lazy" decoding="async"/>
+        <img src="/img/g-cle.jpg" srcset="/img/g-cle-900.jpg 900w, /img/g-cle.jpg 1400w" sizes="(max-width:900px) 92vw, 441px" alt="Serrage à la clé dans le compartiment moteur" width="1400" height="1050" loading="lazy" decoding="async"/>
       </figure>
     </div>
   </div>
@@ -761,6 +770,23 @@ footer a{color:var(--encre)}
   addEventListener('load', planifier);
   reperer();
 })();
+</script>
+<script>
+/* Demo : le bouton d'avis pointe vers une fiche Google qui n'existe pas encore.
+   Sur le site d'un client, PLACE_ID_DU_CLIENT est remplace par sa vraie fiche
+   et ce script ne trouve plus rien a faire. */
+document.querySelectorAll('a[href*="PLACE_ID_DU_CLIENT"]').forEach(function(a){
+  a.addEventListener('click', function(e){
+    e.preventDefault();
+    var boite = a.parentNode, n = boite.querySelector('.note-demo');
+    if(n) return;
+    n = document.createElement('p');
+    n.className = 'note-demo'; n.setAttribute('role', 'status');
+    n.style.cssText = 'flex-basis:100%;width:100%;margin:.9rem 0 0;font-size:.92rem;line-height:1.5;color:inherit;opacity:1';
+    n.textContent = 'Exemple\u00a0: sur votre site, ce bouton ouvre directement votre fiche Google, prête à recevoir l\'avis.';
+    boite.appendChild(n);
+  });
+});
 </script>
 </body>
 </html>
